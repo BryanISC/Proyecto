@@ -1,0 +1,45 @@
+<div *ngIf="productos.length > 0; else noproductos" >
+ <ul class="list-group"> 
+  <li *ngFor="let p of productos" class="list-group-item list-group-item-action">
+    <div class="form-control" >
+        <h5>{{p.name}}</h5> 
+    </div>
+    <div class="form-control">
+        <h5>{{p.descripcion}}</h5> 
+    </div>
+    <div class="form-control">
+        <h5>{{p.cantidad}}</h5>
+    </div>
+    <div class="form-control">
+        <h5>{{p.precio}}</h5>
+    </div>
+        <button (click)="borrarProductos($event, p)" class="btn btn-danger">
+            Borrar
+        </button>
+        <button (click)="editarProductos($event, p)" class="btn btn-primary">
+            Editar
+        </button>
+       <div *ngIf="editando && editandoProductos.id == p.id">
+        <form (ngSubmit)="actualizarProductos()">
+            <div class="form-group mt-3">
+                <input type="text" name="name" [(ngModel)]="editandoProductos.name" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" name="descripcion" [(ngModel)]="editandoProductos.descripcion" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="number" name="precio" [(ngModel)]="editandoProductos.precio" class="form-control"/> 
+            </div>
+            <button type="submit" class="btn btn-success btn-block">
+                Actualizar
+            </button>
+        </form>
+       </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noproductos>
+    <p>No hay productos</p>
+</ng-template>
+
