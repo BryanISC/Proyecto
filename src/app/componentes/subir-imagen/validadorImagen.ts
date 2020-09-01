@@ -1,7 +1,7 @@
 import { FileItem } from "../../models/file-item";
 
 export class validarImagen {
-    private acceptType =['image/jpg', 'image/png'];
+    private acceptType =['image/jpeg', 'image/png'];
 
     validateType(fileType:string):boolean{
         return fileType === '' || fileType === undefined 

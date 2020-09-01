@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { FileItem } from '../../models/file-item';
 
 import { finalize } from 'rxjs/operators';
+import { FileItem } from '../../models/file-item';
 
 @Injectable()
 export class AlmacenamientoService {
-  private MEDIA_STORAGE_PATH = 'carpeta';
+  private MEDIA_STORAGE_PATH = 'imagenes';
   constructor(private readonly storage: AngularFireStorage) { }
 
   subirImagen(image: FileItem[]) {
     for(const item of image) {
-      item.subiendo;
+      item.subiendo = true;
 
       const filePath = this.generarNombreDeArchivo(item.name);
       const fileRef = this.storage.ref(filePath);
@@ -30,6 +30,6 @@ export class AlmacenamientoService {
   }
 
   private generarNombreDeArchivo(name:string):string{
-    return `${this,this.MEDIA_STORAGE_PATH}/${new Date().getTime()}_${name}`;
+    return `${this.MEDIA_STORAGE_PATH}/${new Date().getTime()}_${name}`;
   }
 }

@@ -1,9 +1,9 @@
-import { Directive, Input, Output, EventEmitter, Host, HostListener } from '@angular/core';
+import { Directive, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { FileItem } from '../../../models/file-item';
 import { validarImagen } from '../validadorImagen';
 
 @Directive({
-  selector: '[appNgDominicodeFiles]'
+  selector: '[appNgDominicodeFiles]',
 })
 export class NgDominicodeFilesDirective extends validarImagen {
   @Input() files: FileItem[] = [];
@@ -22,7 +22,7 @@ export class NgDominicodeFilesDirective extends validarImagen {
 //Manipular cuando el mouse suelta los ficheros.
   @HostListener('drop', ['$event'])
   onDrop(event: any) {
-    const dataTransfer = this.getDataTranfer(event);
+    const dataTransfer = this.getDataTransfer(event);
     if (!dataTransfer) {
       return;
     }
@@ -33,10 +33,10 @@ export class NgDominicodeFilesDirective extends validarImagen {
   }
 
 //Pasamos el fichero.
-  private getDataTranfer(event: any ){
+  private getDataTransfer(event: any ){
     return event.dataTransfer
     ? event.dataTransfer
-    : event.orinalEvent.dataTransfer;
+    : event.originalEvent.dataTransfer;
   }
 //Extraer el fichero.
   private extractFiles(fileList:FileList): void{
@@ -64,7 +64,7 @@ export class NgDominicodeFilesDirective extends validarImagen {
 //Prever de que no se habra el navegador cuando se habra algun fichero.
   private preventAndStop(event: any): void {
     event.preventDefault();
-    event.StopPropagation();
+    //event.StopPropagation();
   }
 
 }

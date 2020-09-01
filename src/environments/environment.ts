@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyBAmV5qZBwp-0VR8dUGZj95z-bqDCgkBNw",
-    authDomain: "prueba-bf4c8.firebaseapp.com",
-    databaseURL: "https://prueba-bf4c8.firebaseio.com",
-    projectId: "prueba-bf4c8",
-    storageBucket: "prueba-bf4c8.appspot.com",
-    messagingSenderId: "508138388298",
-    appId: "1:508138388298:web:a40e456e20e6b80bad9fb3"
+  firebaseConfig: {
+  apiKey: "AIzaSyBAmV5qZBwp-0VR8dUGZj95z-bqDCgkBNw",
+  authDomain: "prueba-bf4c8.firebaseapp.com",
+  databaseURL: "https://prueba-bf4c8.firebaseio.com",
+  projectId: "prueba-bf4c8",
+  storageBucket: "prueba-bf4c8.appspot.com",
+  messagingSenderId: "508138388298",
+  appId: "1:508138388298:web:a40e456e20e6b80bad9fb3"
   }
 };
 

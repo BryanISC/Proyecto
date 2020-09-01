@@ -1,1 +1,54 @@
-<p>subir-imagen wo rks!</p>
+<div class="row">
+    <div class="col-md-5 mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h5>Archivo</h5>
+            </div>
+            <div class="card-body">
+                <div appNgDominicodeFiles [files]="files" (mouseOver)="isOverDrop = $event" [ngClass]="{ 'files-over': isOverDrop }" class="drop-zone">
+                <h6>Suelta la imagen aqui</h6>
+                    <img src="../../../assets/subir.png" alt="drop-images" />
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12 mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h5>Archivos para subir</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre de Archivo</th>
+                            <th>Peso</th>
+                            <th>Progreso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let file of files">
+                            <td>{{ file.name }}</td>
+                            <td>{{ file.size / 1024 / 1024 | number: ".2.2" }}MB</td>
+                            <td >*ngIf="file.porcentajeSubida | async as porcentajeSubida"
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" [ngStyle]="{ width: porcentajeSubida + '%' }"> 
+                                        {{ porcentajeSubida | number: "1.0-0" }} %
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+               <div class="container-buttons mt-5">
+                    <button (click)="files = []" class="btn btn-danger">Borrar todo</button>
+                    <button (click)="onUpload()" [disabled]="files.length === 0" class="btn btn-primary">
+                        Subir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

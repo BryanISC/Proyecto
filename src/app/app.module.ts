@@ -14,7 +14,13 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ProductosFormComponent } from './componentes/productos-form/productos-form.component';
 import { from } from 'rxjs';
+
+import { CommonModule } from '@angular/common';
+
+import { SubirImagenRoutingModule } from './componentes/subir-imagen/subir-imagen-routing.module';
 import { SubirImagenComponent } from './componentes/subir-imagen/subir-imagen.component';
+import { NgDominicodeFilesDirective } from './componentes/subir-imagen/directivas/ng-dominicode-files.directive';
+
 
 @NgModule({
   declarations: [
@@ -22,20 +28,25 @@ import { SubirImagenComponent } from './componentes/subir-imagen/subir-imagen.co
     ProductosComponent,
     ListaProductosComponent,
     ProductosFormComponent,
-    SubirImagenComponent
+    SubirImagenComponent, 
+    NgDominicodeFilesDirective
+    
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
     FormsModule,
     AngularFireModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SubirImagenRoutingModule,
+    CommonModule
   ],
   providers: [
-    { provide: BUCKET, useValue:'gs://prueba-bf4c8.appspot.com' },
+    { provide: BUCKET, useValue:'gs://prueba-bf4c8.appspot.com/' },
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class SubirImagenModule {}
