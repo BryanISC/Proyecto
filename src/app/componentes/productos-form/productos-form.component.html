@@ -1,16 +1,26 @@
-<div class="card card-body">
+<div class="card card-body" class="shadow p-3 mb-5 bg-white rounded" >
     <form (ngSubmit)="agregarProductos()">
         <div class="form-group">
+            <label>Nombre:</label>
             <input type="text" name="name" [(ngModel)]="producto.name" class="form-control" placeholder="Nombre de producto">
         </div>
         <div class="form-group">
+            <label>Descripcion:</label>
             <input type="text" name="descripcion" [(ngModel)]="producto.descripcion" class="form-control" placeholder="Descripcion de producto">
         </div>
-        <div class="form-group">
+        <div class="row col-xs-12">
+        <div class="form-group" class="col-md-4">
+            <label>Cantidad:</label>
             <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto">
         </div>
-        <div class="form-group">
+        <div class="form-group" class="col-md-4">
+            <label>Precio:</label>
             <input type="number" name="precio" [(ngModel)]="producto.precio" class="form-control" placeholder="Precio del producto">
+        </div>
+        <div class="form-group" class="col-md-4">
+            <label>Categoria:</label>
+            <input type="text" name="Categoria" [(ngModel)]="producto.categoria" class="form-control" placeholder="Categoria del producto">
+        </div>
         </div>
         <app-subir-imagen></app-subir-imagen>
 

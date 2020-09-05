@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Productos } from '../models/productos';
-import { Action } from 'rxjs/internal/scheduler/Action';
+
 
 
 @Injectable({
@@ -45,4 +45,5 @@ export class ProductosService {
     this.productosDoc = this.db.doc(`productos/${productos.id}`);
     this.productosDoc.update(productos);
    }
+
 }

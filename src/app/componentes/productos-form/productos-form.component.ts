@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileItem } from "../../models/file-item";
 
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
@@ -9,6 +10,7 @@ import { Productos } from 'src/app/models/productos';
   styleUrls: ['./productos-form.component.css']
 })
 export class ProductosFormComponent implements OnInit {
+  file = {} as FileItem;
 
   producto = {} as Productos;
 
@@ -19,10 +21,9 @@ export class ProductosFormComponent implements OnInit {
 
   agregarProductos() {
     if(this.producto.name !== '' && this.producto.descripcion !== '' && this.producto.precio !== 0) {
+      
       this.productosService.agregarProductos(this.producto); 
-      this.producto = {} as Productos;
     }
-    
+    this.producto = {} as Productos;    
   }
-
 }

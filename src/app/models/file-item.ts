@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 
 export class FileItem {
+    public id: number;
     public name: string;
     public subiendo: boolean;
     public porcentajeSubida: Observable<number>;

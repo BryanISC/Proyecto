@@ -20,6 +20,8 @@ import { CommonModule } from '@angular/common';
 import { SubirImagenRoutingModule } from './componentes/subir-imagen/subir-imagen-routing.module';
 import { SubirImagenComponent } from './componentes/subir-imagen/subir-imagen.component';
 import { NgDominicodeFilesDirective } from './componentes/subir-imagen/directivas/ng-dominicode-files.directive';
+import { PedidosComponent } from './componentes/pedidos/pedidos.component';
+import { ClientesPedidosComponent } from './componentes/clientes-pedidos/clientes-pedidos.component';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { NgDominicodeFilesDirective } from './componentes/subir-imagen/directiva
     ListaProductosComponent,
     ProductosFormComponent,
     SubirImagenComponent, 
-    NgDominicodeFilesDirective
+    NgDominicodeFilesDirective, PedidosComponent, ClientesPedidosComponent
     
   ],
   imports: [

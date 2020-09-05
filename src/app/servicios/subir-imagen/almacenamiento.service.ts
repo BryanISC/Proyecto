@@ -4,8 +4,14 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { FileItem } from '../../models/file-item';
 
+
+
+
 @Injectable()
 export class AlmacenamientoService {
+
+
+
   private MEDIA_STORAGE_PATH = 'imagenes';
   constructor(private readonly storage: AngularFireStorage) { }
 
@@ -32,4 +38,6 @@ export class AlmacenamientoService {
   private generarNombreDeArchivo(name:string):string{
     return `${this.MEDIA_STORAGE_PATH}/${new Date().getTime()}_${name}`;
   }
+ 
+
 }

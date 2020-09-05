@@ -11,7 +11,10 @@
         <h5>{{p.cantidad}}</h5>
     </div>
     <div class="form-control mb-3">
-        <h5>{{p.precio}}</h5>
+        <h5>RD${{p.precio}}</h5>
+    </div>
+    <div class="card-body mb-3" >
+        <img src="../../../assets/subir.png" alt="drop-images" />
     </div>
         <button (click)="borrarProductos($event, p)" class="btn btn-danger">
             Borrar
