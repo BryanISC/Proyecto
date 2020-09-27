@@ -31,7 +31,9 @@ import { ClientesPedidosComponent } from './componentes/clientes-pedidos/cliente
     ListaProductosComponent,
     ProductosFormComponent,
     SubirImagenComponent, 
-    NgDominicodeFilesDirective, PedidosComponent, ClientesPedidosComponent
+    NgDominicodeFilesDirective, 
+    PedidosComponent, 
+    ClientesPedidosComponent
     
   ],
   imports: [

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 
 export class FileItem {
-    public id: number;
+    public id: string;
     public name: string;
     public subiendo: boolean;
     public porcentajeSubida: Observable<number>;
@@ -9,6 +9,6 @@ export class FileItem {
 
     constructor(public file: File = file) {
         this.name = file.name;
-        this.subiendo =false;
+        this.subiendo = false;
     }
 }

@@ -3,6 +3,8 @@ import { FileItem } from "../../models/file-item";
 
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
+import { ConstantPool } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-productos-form',
@@ -10,20 +12,29 @@ import { Productos } from 'src/app/models/productos';
   styleUrls: ['./productos-form.component.css']
 })
 export class ProductosFormComponent implements OnInit {
-  file = {} as FileItem;
+
+  imgURL:string
 
   producto = {} as Productos;
 
-  constructor(public productosService: ProductosService) { }
+  constructor(public productosService: ProductosService) { 
+    this.imgURL = ""
+  }
 
   ngOnInit(): void {
   }
 
+  agregarUrl(evento){
+    this.imgURL = evento;
+  }
+
   agregarProductos() {
     if(this.producto.name !== '' && this.producto.descripcion !== '' && this.producto.precio !== 0) {
-      
+      this.producto.imagenUrl = this.imgURL;  
+      console.log(this.producto);
       this.productosService.agregarProductos(this.producto); 
     }
-    this.producto = {} as Productos;    
+    this.producto = {} as Productos;
+    this.imgURL = "";
   }
 }

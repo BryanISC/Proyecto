@@ -1,29 +1,47 @@
-<div *ngIf="productos.length > 0; else noproductos">
- <ul class="list-group"> 
-  <li *ngFor="let p of productos" class="list-group-item list-group-item-action">
-    <div class="form-control mb-3" >
-        <h5>{{p.name}}</h5> 
-    </div>
-    <div class="form-control mb-3">
-        <h5>{{p.descripcion}}</h5> 
-    </div>
-    <div class="form-control mb-3">
-        <h5>{{p.cantidad}}</h5>
-    </div>
-    <div class="form-control mb-3">
-        <h5>RD${{p.precio}}</h5>
-    </div>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">HOME</a>
+    <a href="subir-imagen">subir imagen</a>
+    <a href="productos">productos</a>
+    <a href="productos-form">productos form</a>
+  
+    </nav>
+
+
+<div *ngIf="productos.length > 0; else noproductos" class="row" >
+ <ul > 
+  <li *ngFor="let p of productos" class="list-group ">
+    <div class="shadow p-3 mb-5 bg-white rounded">
     <div class="card-body mb-3" >
-        <img src="../../../assets/subir.png" alt="drop-images" />
+        <img [src]="p.imagenUrl" alt="drop-images" />
     </div>
+    <div class="form-control mb-3" >
+        <h6>{{p.name}}</h6> 
+    </div>
+    <div class="form-control mb-3">
+        <h6>{{p.descripcion}}</h6> 
+    </div>
+    <div class="form-control mb-3">
+        <h6>{{p.cantidad}}</h6>
+    </div>
+    <div class="form-control mb-3">
+        <h6>RD${{p.precio}}</h6>
+    </div>
+    <div class="form-control mb-3">
+        <h6>{{p.categoria}}</h6>
+    </div>
+    
         <button (click)="borrarProductos($event, p)" class="btn btn-danger">
             Borrar
         </button>
         <button (click)="editarProductos($event, p)" class="btn btn-primary">
             Editar
         </button>
+    </div>
        <div *ngIf="editando && editandoProductos.id == p.id">
             <form (ngSubmit)="actualizarProductos()">
+                <div class="card-body mb-3" >
+                    <img src='{{p.imagenUrl}}' alt="drop-images" />
+                </div>
                 <div class="form-group mt-3">
                     <input type="text" name="name" [(ngModel)]="editandoProductos.name" class="form-control">
                 </div>
@@ -36,6 +54,10 @@
                 <div class="form-group">
                     <input type="number" name="precio" [(ngModel)]="editandoProductos.precio" class="form-control"/> 
                 </div>
+                <div class="form-group">
+                    <input type="text" name="categoria" [(ngModel)]="editandoProductos.categoria" class="form-control"/> 
+                </div>
+                
                 <button type="submit" class="btn btn-success btn-block">
                     Actualizar
                 </button>

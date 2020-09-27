@@ -3,14 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductosComponent } from "./componentes/productos/productos.component";
 import { HomeComponent } from "./componentes/home/home.component";
 import { SubirImagenComponent } from "./componentes/subir-imagen/subir-imagen.component";
+import { ProductosFormComponent } from './componentes/productos-form/productos-form.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  {path: '', component: HomeComponent},
+  { path: '',   redirectTo: '/', pathMatch: 'full' },
   {path: 'subir-imagen', component: SubirImagenComponent},
-  // {path: 'subir-imagen', loadChildren: () => import('./app.module').then(m => m.SubirImagenModule)},
   {path: 'productos', component: ProductosComponent},
+  {path: 'productos-form', component: ProductosFormComponent},
 ];
 
 @NgModule({
