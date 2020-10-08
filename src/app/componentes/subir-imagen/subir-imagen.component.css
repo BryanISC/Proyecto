@@ -1,5 +1,73 @@
 img{
-    width: 200px; height: 157px;
+    width: 350px; height: 250px;
     display:block;
     margin:auto;
+    float: left;
+    padding: 10px;
+    /*opacity:0.4;*/
+    border-radius:30px;
 }
+
+.row {
+    width: 700px;
+    
+}
+
+.card-header {
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 45px;
+    
+}
+
+.card {
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-body {
+    float: left;
+    padding: 1px;
+    margin-top: 10px;
+    
+}
+
+.Card-title {
+    background: #f12711;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711);
+    
+}
+ /*  h6 {
+    text-align: center;
+    font: italic bold 18px Georgia, Serif;
+    margin-top: 10px
+}*/
+
+h5 {
+    
+    font: italic bold 20px Georgia, Serif;
+    
+}
+
+th {
+    font: italic bold 15px Georgia, Serif;
+}
+
+td {
+    font: italic bold 15px Georgia, Serif;
+}
+
+.vr {
+    width:2px;
+    background-color:#000;
+    position:absolute;
+    top:45px;
+    bottom:0;
+    left:350px;
+}
+
+
+

@@ -1,37 +1,56 @@
-<div class="row">
-    <div class="col-md-3 mt-3">
+
+<div class="card-body">
+<div class="row" class="shadow p-3 mb-1 bg-white rounded">
+    
         <div class="card">
             <div class="card-header">
-                <h5>Archivo</h5>
+                <h5>Suelte la imagen aqui</h5>
+                
             </div>
-            <div class="card-body">
+            <div class="Card-title">
                 <div appNgDominicodeFiles [files]="files" (mouseOver)="isOverDrop = $event" [ngClass]="{ 'file-over': isOverDrop }" class="drop-zone">
-                <h6>Arrastra la imagen aqui</h6>
-                    <img src="../../../assets/subir.png" alt="drop-images" />
+                <img src="../../../assets/subir.png" alt="drop-images" />
+                <div class="vr">&nbsp;</div>
+                <tr *ngFor="let file of files">
+                    <td *ngIf="file.descargarURL | async as descargarURL" >
+                     <img src='{{descargarURL}}' alt="drop-images" />
+                     </td>
+                    </tr>
                 </div>
             </div>
         </div>
-    </div>
-<div class="row">
-    <div class="col-md-12 mt-3">
+    
+        
+            
+        
+
+    
+  
+    
+       
+    
+
+<div class="row p-2">
+    <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
                 <h5>Archivos para subir</h5>
             </div>
-            <div class="card-body">
+            <div class="Card-title">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Nombre de Archivo</th>
-                            <th>Peso</th>
+                            <th>Nombre de la imagen</th>
+                            <th></th>
                             <th>Progreso</th>
+                            <th></th>
                             <th>URL</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let file of files">
                             <td>{{ file.name }}</td>
-                            <td>{{ file.size / 1024 / 1024 | number: ".2.2" }}MB</td>
+                            <td></td>
                             <td *ngIf="file.porcentajeSubida | async as porcentajeSubida">
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" [ngStyle]="{ width: porcentajeSubida + '%' }"> 
@@ -39,6 +58,7 @@
                                     </div>
                                 </div>
                             </td>
+                            <td></td>
                             <td *ngIf="file.descargarURL | async as descargarURL">
                                 <!-- <a [href]="descargarURL" target="_blank">Download URL</a> -->
                                 <button (click)="asignarValor(descargarURL)" class="btn btn-primary">Asignar URL</button>
@@ -46,8 +66,8 @@
                         </tr>
                     </tbody>
                 </table>
-               <div class="container-buttons mt-5">
-                    <button (click)="files = []" class="btn btn-danger">Borrar</button>
+               <div class="container-buttons">
+                    <button (click)="files = []" class="btn btn-danger" style="margin: 10px">Borrar</button>
                     <button (click)="onUpload()" [disabled]="files.length === 0" class="btn btn-primary">
                         Subir
                     </button>
@@ -56,22 +76,8 @@
         </div>
     </div>
   </div>
-
-      <div class="col-md-3 mt-3">
-        <div class="card" >
-            <div class="card-body">
-                <tr *ngFor="let file of files">
-                <td *ngIf="file.descargarURL | async as descargarURL">
-
-                 <img src='{{descargarURL}}' alt="drop-images" />
-   
-                 </td>
-                </tr>
-            </div>
-        </div>
-    </div>
     
 </div>
 
-
+</div>
     
