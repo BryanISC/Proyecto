@@ -1,11 +1,3 @@
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">HOME</a>
-    <a href="subir-imagen">subir imagen</a>
-    <a href="productos">productos</a>
-    <a href="productos-form">productos form</a>
-  
-    </nav>
-
 
 <div *ngIf="productos.length > 0; else noproductos" class="row" >
  <ul > 
@@ -35,12 +27,18 @@
     <div class="form-control mb-1">
         <h6>RD$ {{p.precio}}</h6>
     </div>
-
-        <img src="../../../assets/eliminar.png" alt="drop-images" (click)="borrarProductos($event, p)" />
+        
+        <button (click)="borrarProductos($event, p)" class="btn btn-danger">
+            Borrar
+        </button>
         <button (click)="editarProductos($event, p)" class="btn btn-primary">
             Editar
         </button>
     </div>
+
+    
+    
+
        <div *ngIf="editando && editandoProductos.id == p.id">
             <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded">
                 <div class="card-body mb-1" >

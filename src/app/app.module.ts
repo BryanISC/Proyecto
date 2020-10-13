@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
 
-import { AngularFireModule, ɵBlockUntilFirstOperator } from '@angular/fire';
+import { AngularFireModule} from '@angular/fire';
 import { AngularFireStorageModule, BUCKET } from "@angular/fire/storage";
 
 import { environment } from '../environments/environment';
@@ -23,8 +23,12 @@ import { NgDominicodeFilesDirective } from './componentes/subir-imagen/directiva
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import { ClientesPedidosComponent } from './componentes/clientes-pedidos/clientes-pedidos.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { NavbarComponent } from './componentes/navbar/navbar.component'
+import { RouterModule} from '@angular/router';
 
-@NgModule({
+@NgModule({  
   declarations: [
     AppComponent,
     ProductosComponent,
@@ -33,11 +37,13 @@ import { ClientesPedidosComponent } from './componentes/clientes-pedidos/cliente
     SubirImagenComponent, 
     NgDominicodeFilesDirective, 
     PedidosComponent, 
-    ClientesPedidosComponent
+    ClientesPedidosComponent,
+    NavbarComponent
     
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
@@ -45,7 +51,9 @@ import { ClientesPedidosComponent } from './componentes/clientes-pedidos/cliente
     AngularFireModule,
     AppRoutingModule,
     SubirImagenRoutingModule,
-    CommonModule
+    CommonModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: BUCKET, useValue:'gs://prueba-bf4c8.appspot.com/' },
