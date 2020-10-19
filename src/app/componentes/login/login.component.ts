@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
 import { Router } from '@angular/router';
 import { AutorizacionService } from '../../servicios/login/autorizacion.service';
 
@@ -22,8 +21,12 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
     try {
       const user = await this.authSvc.login(email, password);
-      if (user) {
+      if (user && user.user.emailVerified) {
         this.router.navigate(['/']);
+      } else if (user) {
+        this.router.navigate(['/verificacion-email']);
+      } else {
+        this.router.navigate(['/registro']);
       }
     } catch (error) {
       console.log(error);

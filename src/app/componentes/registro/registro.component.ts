@@ -23,7 +23,7 @@ export class RegistroComponent {
     try {
       const user = await this.authSvc.register(email, password);
       if (user) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/verificacion-email']);
       }
     } catch (error) {
       console.log(error);

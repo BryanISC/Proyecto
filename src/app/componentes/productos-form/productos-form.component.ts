@@ -32,9 +32,13 @@ export class ProductosFormComponent implements OnInit {
     if(this.producto.name !== '' && this.producto.descripcion !== '' && this.producto.precio !== 0) {
       this.producto.imagenUrl = this.imgURL;  
       console.log(this.producto);
-      this.productosService.agregarProductos(this.producto); 
+      this.productosService.agregarProductos(this.producto);
+      
     }
     this.producto = {} as Productos;
     this.imgURL = "";
+    alert('Producto guardado exitosamente')
+
   }
+  
 }

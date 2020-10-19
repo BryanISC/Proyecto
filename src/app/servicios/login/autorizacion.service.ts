@@ -5,8 +5,11 @@ import { User } from 'firebase';
 @Injectable()
 export class AutorizacionService {
   public user: User;
-
   constructor(public afAuth: AngularFireAuth) {}
+
+  async enviarVerificacionEmail(): Promise<void> {
+    return (await this.afAuth.currentUser).sendEmailVerification();
+  }
 
   async login(email: string, password: string) {
     try {
@@ -26,6 +29,7 @@ export class AutorizacionService {
         email,
         password
       );
+      this.enviarVerificacionEmail();
       return result;
     } catch (error) {
       console.log(error);

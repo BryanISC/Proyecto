@@ -27,6 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { NavbarComponent } from './componentes/navbar/navbar.component'
 import { RouterModule} from '@angular/router';
+import { HomeComponent } from './componentes/home/home.component';
+import { EnviarEmailComponent } from './componentes/enviar-email/enviar-email.component';
+import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
 
 @NgModule({  
   declarations: [
@@ -38,7 +41,10 @@ import { RouterModule} from '@angular/router';
     NgDominicodeFilesDirective, 
     PedidosComponent, 
     ClientesPedidosComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    EnviarEmailComponent,
+    EnviarEmailDeConfirmacionComponent,
     
   ],
   imports: [

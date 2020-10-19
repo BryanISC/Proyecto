@@ -1,9 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="\">Home</a>
-    <a class="navbar-brand" href="login">login</a>
-    <a class="navbar-brand" href="registro">registro</a>
     <a class="navbar-brand" href="productos">productos</a>
-    <a class="navbar-brand" href="productos-form">productos form</a>
+    <a class="navbar-brand" href="productos-form">Registro de productos</a>
+    <a class="navbar-brand" href="verificacion-email">Email</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,31 +16,28 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
+      <!-- <ul class="navbar-nav mr-auto">
         <li class="nav-item active" *ngIf="user$ | async as user">
           <a class="nav-link" routerLink="/upload-image">Upload</a>
         </li>
-      </ul>
+      </ul> -->
       <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
         <li class="nav-item" *ngIf="user">
-          <a href="#" class="nav-link" (click)="onLogout()">Logout</a>
+          <a href="login" class="nav-link" (click)="onLogout()" style="padding-left: 600px;">Cerrar sesión</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"> {{ user?.email }}</a>
         </li>
       </ul>
       <ng-template #login>
-        <ul class="navbar-nav mx-auto">
+        <!-- <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
+            <a class="nav-link" routerLink="/login" style="padding-left: 550px;">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/registro">Registro</a>
           </li>
-          <li class="nav-item">
-             <a class="nav-link">{{user?.email}}</a>
-          </li>
-        </ul>
+        </ul> -->
       </ng-template>
     </div>
   </nav>
