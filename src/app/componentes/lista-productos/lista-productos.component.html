@@ -1,1 +1,35 @@
-<p>lista-productos works!</p>
+<app-navbar></app-navbar>
+
+<div *ngIf="productos.length > 0; else noproductos" class="row" >
+    <form (ngSubmit)="agregarPedidos()">
+    <ul>
+     <li *ngFor="let p of productos" class="list-group" >
+       <div class="shadow bg-white rounded">
+       <!-- <div class="card"  > -->
+           <img [src]="p.imagenUrl" alt="drop-images" />
+           <!-- <hr> -->
+       
+       <!-- <h6>{{p.descripcion}}</h6>  -->
+       <div class="cinta uno">
+        <a type="text" name="name" [(ngModel)]="producto.name">{{p.name}}</a>
+        <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
+        <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
+       </div>
+       
+        <h6>RD$ {{p.precio}}.00</h6>
+        <!-- <button class="btn btn-dark btn-block col-md-12">
+            seleccionar
+        </button> -->
+       </div>
+       
+    </li>
+    </ul>
+    <!-- <button type="submit"  class="btn mt-4 btn-dark btn-block col-md-4">
+        Guardar
+    </button> -->
+    </form>
+</div>   
+
+<ng-template #noproductos>
+    <p>No hay productos</p>
+</ng-template>

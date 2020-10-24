@@ -31,6 +31,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { EnviarEmailComponent } from './componentes/enviar-email/enviar-email.component';
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
 
+
 @NgModule({  
   declarations: [
     AppComponent,

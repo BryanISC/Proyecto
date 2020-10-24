@@ -6,6 +6,7 @@ import { SubirImagenComponent } from "./componentes/subir-imagen/subir-imagen.co
 import { ProductosFormComponent } from './componentes/productos-form/productos-form.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
+import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component'
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'registro', loadChildren: () => import('./componentes/registro/registro.module').then(m => m.RegistroModule) },
   {path: 'navbar', component: NavbarComponent},
   {path: 'verificacion-email', component: EnviarEmailDeConfirmacionComponent},
+  {path: 'lista-productos', component: ListaProductosComponent},
 
 ];
 

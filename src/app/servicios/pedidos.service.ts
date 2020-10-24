@@ -4,27 +4,19 @@ import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Productos } from '../models/productos';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class ProductosService {
+export class PedidosService {
 
   productosCollection: AngularFirestoreCollection<Productos>;
   productos: Observable<Productos[]>;
   productosDoc: AngularFirestoreDocument<Productos>;
   
-  // Variables de los pedidos
-
-  pedidosCollection: AngularFirestoreCollection<Productos>;
-  pedidos: Observable<Productos[]>;
-  pedidosDoc: AngularFirestoreDocument<Productos>;
-
 
   constructor(public db: AngularFirestore) {
     //this.productos = this.db.collection('productos').valueChanges();
-    this.productosCollection = this.db.collection('productos');
+    this.productosCollection = this.db.collection('pedidos');
     this.productos = this.productosCollection.snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Productos;
@@ -32,16 +24,6 @@ export class ProductosService {
         return data;
       });
     }));
-
-    this.pedidosCollection = this.db.collection('pedidos');
-    this.pedidos = this.pedidosCollection.snapshotChanges().pipe(map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data() as Productos;
-        data.id = a.payload.doc.id;
-        return data;
-      });
-    }));
-
    }
    
    getProductos() {
@@ -53,18 +35,13 @@ export class ProductosService {
    }
 
    borrarProductos(productos: Productos) {
-    this.productosDoc = this.db.doc(`productos/${productos.id}`);
+    this.productosDoc = this.db.doc(`pedidos/${productos.id}`);
     this.productosDoc.delete();
    }
 
    actualizarProductos(productos: Productos) {
-    this.productosDoc = this.db.doc(`productos/${productos.id}`);
+    this.productosDoc = this.db.doc(`pedidos/${productos.id}`);
     this.productosDoc.update(productos);
    }
 
-   agregarPedidos(productos: Productos){
-    this.pedidosCollection.add(productos);
-   }
-
 }
-
