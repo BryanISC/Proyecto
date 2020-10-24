@@ -1,0 +1,20 @@
+<h1>Modal</h1>
+<hr>
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h4 class="modal-tittle">Titulo Modal</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-label="true">&times;</span>        
+        </button>
+    </div>
+    <div class="modal-body">
+        Contenido del modal
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="modal.close()">
+            ok
+        </button>
+    </div>
+</ng-template>
+
+<button type="button" class="btn btn-outline-danger" (click)="modal.open(contenido)">modal</button>

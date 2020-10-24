@@ -30,6 +30,8 @@ import { RouterModule} from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
 import { EnviarEmailComponent } from './componentes/enviar-email/enviar-email.component';
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
+import { ModalComponent } from './componentes/lista-productos/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({  
@@ -46,6 +48,8 @@ import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-d
     HomeComponent,
     EnviarEmailComponent,
     EnviarEmailDeConfirmacionComponent,
+    ModalComponent,
+    
     
   ],
   imports: [
@@ -61,6 +65,7 @@ import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-d
     CommonModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [
     { provide: BUCKET, useValue:'gs://prueba-bf4c8.appspot.com/' },

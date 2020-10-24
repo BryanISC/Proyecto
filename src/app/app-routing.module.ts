@@ -7,6 +7,8 @@ import { ProductosFormComponent } from './componentes/productos-form/productos-f
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component'
+import { ModalComponent } from './componentes/lista-productos/modal/modal.component'
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'verificacion-email', component: EnviarEmailDeConfirmacionComponent},
   {path: 'lista-productos', component: ListaProductosComponent},
+  {path: 'modal', component: ModalComponent},
 
 ];
 

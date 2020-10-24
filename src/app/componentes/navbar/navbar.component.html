@@ -4,6 +4,7 @@
     <a class="navbar-brand" href="productos">productos</a>
     <a class="navbar-brand" href="productos-form">Registro de productos</a>
     <a class="navbar-brand" href="verificacion-email">Email</a>
+    <a class="navbar-brand" href="modal">Modal</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -24,7 +25,7 @@
       </ul> -->
       <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
         <li class="nav-item" *ngIf="user">
-          <a href="login" class="nav-link" (click)="onLogout()" style="padding-left: 500px;">Cerrar sesión</a>
+          <a href="login" class="nav-link" (click)="onLogout()" style="padding-left: 400px;">Cerrar sesión</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"> {{ user?.email }}</a>
