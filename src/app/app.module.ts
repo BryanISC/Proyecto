@@ -32,6 +32,8 @@ import { EnviarEmailComponent } from './componentes/enviar-email/enviar-email.co
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
 import { ModalComponent } from './componentes/lista-productos/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
+
 
 
 @NgModule({  
@@ -49,6 +51,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EnviarEmailComponent,
     EnviarEmailDeConfirmacionComponent,
     ModalComponent,
+    ModalEditarComponent,
+   
     
     
   ],

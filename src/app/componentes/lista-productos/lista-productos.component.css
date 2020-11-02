@@ -1,15 +1,21 @@
-img {
+.imagen {
     width: 200px;
     height: 250px;
     /* border-radius: 150px; */
     box-shadow: 0 0 8px 8px white inset;
     
     }
+
+    .icono {
+        width: 30px;
+        height: 35px;
+        text-align: center;
+    }
     
     li{
         
         float: left;
-        padding: 10px;
+        padding: 6px;
         font: italic bold 15px Georgia, Serif;
         /* background-color: #00d2ff; */
         /* border: solid; */
@@ -17,6 +23,7 @@ img {
     
     .form-control {
         height: 25px;
+        width: 80px;
         background: #00d2ff;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #928DAB, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #928DAB, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -32,6 +39,10 @@ img {
         
     }
     
+    a {
+        color: rgb(248, 246, 246);
+    }
+
     h6 {
         text-align: center;
         padding: 10px;
@@ -41,7 +52,21 @@ img {
         
         color: rgb(252, 7, 7);
     }
-    
+    .cantidad {
+        position: absolute;
+        padding-top: 70px;
+        padding-left: 48px;
+    }
+
+    button {
+        border-color: transparent;
+        /* background-color: white; */
+        
+        border-radius: 100%;
+        background: transparent;
+        
+    }
+
     .row {
         padding-top: 15px;
         
@@ -133,5 +158,6 @@ img {
         transform: rotate(0deg);
         /* box-shadow: 0px 3px 5px -3px rgb(129, 10, 10); */
         content: "";
+        opacity: .5;
         }
-        
+

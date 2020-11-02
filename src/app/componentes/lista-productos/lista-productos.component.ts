@@ -4,6 +4,7 @@ import { Productos } from 'src/app/models/productos';
 // import { PedidosService } from '../../servicios/productos.service'
 // import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
+
 @Component({
   selector: 'app-lista-productos',
   templateUrl: './lista-productos.component.html',
@@ -26,7 +27,33 @@ export class ListaProductosComponent implements OnInit {
   }
 
   agregarPedidos(){
-    this.productosService.agregarPedidos(this.producto);
+    if(confirm('Estas seguro de su selección?')){
+      this.productosService.agregarPedidos(this.producto);
+      console.log(this.producto);
+    }
+    
+  }
+
+  actualizarPedidos() {
+    if(confirm('Estas seguro de querer actualizarlo?')){
+    this.productosService.actualizarProductos(this.editandoProductos);
+    this.editandoProductos = {} as Productos;
+    this.editando = false;
+    }
+  }
+
+  actualizarProductos() {
+    if(confirm('Estas seguro de querer actualizarlo?')){
+    this.productosService.actualizarProductos(this.editandoProductos);
+    this.editandoProductos = {} as Productos;
+    this.editando = false;
+    }
+    
+  }
+
+  editarProductos(event, productos) {
+    this.editandoProductos = productos;
+    this.editando = !this.editando;
   }
 
 }

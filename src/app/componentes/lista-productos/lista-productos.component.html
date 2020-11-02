@@ -1,17 +1,17 @@
 <app-navbar></app-navbar>
 
 <div *ngIf="productos.length > 0; else noproductos" class="row" >
-    <form (ngSubmit)="agregarPedidos()">
-    <ul>
-     <li *ngFor="let p of productos" class="list-group" >
-       <div class="shadow bg-white rounded">
+    <form *ngFor="let p of productos" >
+    <ul >
+     <li  class="list-group" >
+       <div  class="shadow bg-white rounded">
        <!-- <div class="card"  > -->
-           <img [src]="p.imagenUrl" alt="drop-images" />
+           <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
            <!-- <hr> -->
        
        <!-- <h6>{{p.descripcion}}</h6>  -->
        <div class="cinta uno">
-        <a type="text" name="name" [(ngModel)]="producto.name">{{p.name}}</a>
+        <a >{{p.name}}</a>
         <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
         <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
        </div>
@@ -20,16 +20,37 @@
         <!-- <button class="btn btn-dark btn-block col-md-12">
             seleccionar
         </button> -->
+        <!-- <app-modal></app-modal> -->
+        <!-- <button (click)="editarProductos($event, p)" class="btn btn-primary">
+            seleccionar
+        </button> -->
        </div>
-       
+       <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
+        <form (ngSubmit)="agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
+            <!-- <input type="text" name="name" [(ngModel)]="p.name" class="form-control"> -->
+            <label>Cantidad:</label>
+            <div class="form-group">
+                <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
+                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" required />
+            </div>
+            <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" />
+            <button type="submit" [disabled]="producto.cantidad === 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
+            <!-- <button (click)="editarProductos($event, p)" class="btn btn-success btn-block" >
+                Cancelar
+            </button> -->
+            <!-- <button type="submit" [disabled]="producto.cantidad === 0" class="btn btn-success btn-block" >
+                Seleccionar
+            </button>
+             -->
+        </form>
+   </div>
     </li>
     </ul>
-    <!-- <button type="submit"  class="btn mt-4 btn-dark btn-block col-md-4">
-        Guardar
-    </button> -->
+    
     </form>
 </div>   
 
 <ng-template #noproductos>
     <p>No hay productos</p>
 </ng-template>
+

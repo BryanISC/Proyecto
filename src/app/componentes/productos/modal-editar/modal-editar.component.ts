@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductosService } from '../../servicios/productos.service';
-import { Productos } from 'src/app/models/productos';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ProductosService } from '../../../servicios/productos.service';
+import { Productos } from 'src/app/models/productos';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-modal-editar',
+  templateUrl: './modal-editar.component.html',
+  styleUrls: ['./modal-editar.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class ModalEditarComponent implements OnInit {
 
   productos = [];
+  producto = {} as Productos;
   editandoProductos: Productos;
   editando: boolean = false;
 
-  constructor(public productosService: ProductosService, public modal: NgbModal,) { }
+  constructor(public modal: NgbModal, public productosService: ProductosService) { }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(productos => {

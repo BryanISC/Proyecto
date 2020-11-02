@@ -35,13 +35,11 @@
         <button (click)="editarProductos($event, p)" class="btn btn-primary">
             Editar
         </button>
+        <app-modal-editar></app-modal-editar>
     </div>
 
-    
-    
-
        <div *ngIf="editando && editandoProductos.id == p.id">
-            <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded">
+            <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded" >
                 <div class="card-body mb-1" >
                     <img src='{{p.imagenUrl}}' alt="drop-images" />
                 </div>
@@ -69,6 +67,7 @@
                 <button type="submit" class="btn btn-success btn-block">
                     Actualizar
                 </button>
+                
             </form>
        </div>
     </li>
@@ -78,4 +77,3 @@
 <ng-template #noproductos>
     <p>No hay productos</p>
 </ng-template>
-

@@ -22,21 +22,12 @@ export class AlmacenamientoService {
       const fileRef = this.storage.ref(filePath);
       const task = this.storage.upload(filePath, item.file);
       
-
-
       item.porcentajeSubida = task.percentageChanges();
       task.snapshotChanges()
       .pipe(
         finalize( ()=> {
           item.descargarURL = fileRef.getDownloadURL();
-          //item.id = fileRef.getToken();
-          // this.prod.agregarUrl(stringify(item.descargarURL));
-          // console.log(stringify(item.descargarURL));
           item.subiendo = false;
-
-          // var uno = filePath.child();
-          
-          // console.log(uno);
             
         })
       )

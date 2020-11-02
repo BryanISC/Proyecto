@@ -1,0 +1,21 @@
+.bocadillo{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 30px;
+    float: left;
+    padding: 5px;    
+}
+
+.comida {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 380px;
+    padding: 5px; 
+}
+

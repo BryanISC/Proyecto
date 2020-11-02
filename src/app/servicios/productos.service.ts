@@ -66,5 +66,10 @@ export class ProductosService {
     this.pedidosCollection.add(productos);
    }
 
+   actualizarPedidos(productos: Productos) {
+    this.pedidosDoc = this.db.doc(`pedidos/${productos.id}`);
+    this.pedidosDoc.update(productos);
+   }
+
 }
 
