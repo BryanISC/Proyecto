@@ -6,8 +6,9 @@ border-radius: 150px;
 
 li{
     float: left;
-    padding: 5px;
+    padding-left: 15px;
     font: italic bold 15px Georgia, Serif;
+    
 }
 
 .form-control {

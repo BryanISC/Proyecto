@@ -33,6 +33,7 @@ import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-d
 import { ModalComponent } from './componentes/lista-productos/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
+import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 
 
 
@@ -52,6 +53,7 @@ import { ModalEditarComponent } from './componentes/productos/modal-editar/modal
     EnviarEmailDeConfirmacionComponent,
     ModalComponent,
     ModalEditarComponent,
+    CarruselComponent,
    
     
     

@@ -1,10 +1,9 @@
 <app-navbar></app-navbar>
 
 <h5>Lista de productos</h5>
-<div *ngIf="productos.length > 0; else noproductos" class="row" >
- <ul > 
+<div *ngIf="productos.length > 0; else noproductos" class="body" >
   <li *ngFor="let p of productos" class="list-group " >
-    <div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="shadow p-3 mb-3 bg-white rounded">
     <div class="card-body mb-1 "  >
         <img [src]="p.imagenUrl" alt="drop-images" />
     </div>
@@ -25,7 +24,7 @@
         <h6>{{p.categoria}}</h6>
     </div>
     <label>Precio:</label>
-    <div class="form-control mb-1">
+    <div class="form-control mb-3">
         <h6>RD$ {{p.precio}}.00</h6>
     </div>
         
@@ -44,7 +43,7 @@
                     <img src='{{p.imagenUrl}}' alt="drop-images" />
                 </div>
                 <label>Nombre:</label>
-                <div class="form-group mt-1">
+                <div class="form-group mb-1">
                     <input type="text" name="name" [(ngModel)]="editandoProductos.name" class="form-control">
                 </div>
                 <label>Descripcion:</label>
@@ -71,7 +70,6 @@
             </form>
        </div>
     </li>
-  </ul>
 </div>
 
 <ng-template #noproductos>

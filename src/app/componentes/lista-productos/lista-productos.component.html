@@ -1,14 +1,15 @@
 <app-navbar></app-navbar>
+<app-carrusel></app-carrusel>
 
-<div *ngIf="productos.length > 0; else noproductos" class="row" >
+<div *ngIf="productos.length > 0; else noproductos" class="body">
     <form *ngFor="let p of productos" >
     <ul >
      <li  class="list-group" >
-       <div  class="shadow bg-white rounded">
+       <div  class="shadow bg-white rounded "> 
        <!-- <div class="card"  > -->
+        <div class="zoom">
            <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
-           <!-- <hr> -->
-       
+        </div>
        <!-- <h6>{{p.descripcion}}</h6>  -->
        <div class="cinta uno">
         <a >{{p.name}}</a>
@@ -27,11 +28,11 @@
        </div>
        <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
         <form (ngSubmit)="agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
-            <!-- <input type="text" name="name" [(ngModel)]="p.name" class="form-control"> -->
+            <div class="form-group"><input type="text" name="name" [(ngModel)]="p.name" class="form-control"></div>
             <label>Cantidad:</label>
             <div class="form-group">
                 <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
-                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" required />
+                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
             </div>
             <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" />
             <button type="submit" [disabled]="producto.cantidad === 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
@@ -46,7 +47,6 @@
    </div>
     </li>
     </ul>
-    
     </form>
 </div>   
 

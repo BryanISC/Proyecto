@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent{
 
+  public menu = true;
+  public usuario = true;
+
   public user$: Observable<any> = this.authSvc.afAuth.user;
 
   constructor(public authSvc: AutorizacionService, private router: Router) {}

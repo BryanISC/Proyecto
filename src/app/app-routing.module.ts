@@ -8,7 +8,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
 import { ModalComponent } from './componentes/lista-productos/modal/modal.component';
-import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component'
+import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
+import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'lista-productos', component: ListaProductosComponent},
   {path: 'modal', component: ModalComponent},
   {path: 'modal-editar', component: ModalEditarComponent},
+  {path: 'carrusel', component: CarruselComponent}
  
 
 ];

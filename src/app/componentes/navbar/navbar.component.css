@@ -1,0 +1,54 @@
+img {
+    height: 30px;
+    width: 30px;
+}
+
+.navbar-brand {
+    font-size: 16px;
+}
+
+.navbar {
+    height: 40px;
+    width: 100%;
+}
+
+.menu {
+    border: transparent;
+    background: transparent;
+    /* position: absolute; */
+}
+
+.btn {
+    border: transparent;
+    background: transparent;
+    position: absolute;
+    /* position: relative; */
+    left: 422px;
+    top: -20px;
+}
+
+.sesion {
+    left: 325px;
+    top: 22px;
+    background: #007BFF;
+    border: transparent;
+    text-align: center;
+}
+
+.email {
+    position: absolute;
+    top: -2px;
+    left: 1230px;
+    color: white;
+}
+
+.carrito {
+    background: transparent;
+    border: transparent;
+}
+
+.carrito:hover .car {-webkit-transform:scale(0.9);transform:scale(0.9);}
+.carrito {overflow:hidden;}
+
+.menu:hover .icono {-webkit-transform:scale(0.9);transform:scale(0.9);}
+.menu {overflow:hidden;}
