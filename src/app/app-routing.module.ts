@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: 'lista-productos', component: ListaProductosComponent},
   {path: 'modal', component: ModalComponent},
   {path: 'modal-editar', component: ModalEditarComponent},
-  {path: 'carrusel', component: CarruselComponent}
+  {path: 'carrusel', component: CarruselComponent},
+  { path: 'recuperar-password', loadChildren: () => import('./componentes/recuperar-password/recuperar-password.module').then(m => m.RecuperarPasswordModule) }
  
 
 ];

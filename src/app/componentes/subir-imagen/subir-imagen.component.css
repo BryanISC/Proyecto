@@ -31,13 +31,10 @@ img{
     float: left;
     padding: 1px;
     margin-top: 10px;
-    
 }
 
 .Card-title {
-    background: #f12711;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f5af19, #f12711);
+    background-image: url('../../../assets/fondo.jpg');
     
 }
  /*  h6 {
@@ -49,20 +46,23 @@ img{
 h5 {
     
     font: italic bold 20px Georgia, Serif;
+    color: white;
     
 }
 
 th {
     font: italic bold 15px Georgia, Serif;
+    color: white;
 }
 
 td {
     font: italic bold 15px Georgia, Serif;
+    color: white;
 }
 
 .vr {
     width:2px;
-    background-color:#000;
+    background-color:rgb(253, 250, 250);
     position:absolute;
     top:45px;
     bottom:0;

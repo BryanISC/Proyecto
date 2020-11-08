@@ -7,6 +7,14 @@ export class AutorizacionService {
   public user: User;
   constructor(public afAuth: AngularFireAuth) {}
 
+  async resetPassword(email:string):Promise<void>{
+    try{
+      return this.afAuth.sendPasswordResetEmail(email);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async enviarVerificacionEmail(): Promise<void> {
     return (await this.afAuth.currentUser).sendEmailVerification();
   }

@@ -9,15 +9,15 @@
 
 
     
-    <div   class="modal-body">
+    <div class="modal-body">
         <div *ngIf="productos.length > 0; else noproductos" class="row" >
             <ul > 
-             <li *ngFor="productos" class="list-group " >
+             <li *ngFor="let p of productos" class="list-group " >
                  
                    <button (click)="editarProductos($event, p)" class="btn btn-primary">
                        Editar
                    </button>
-                   <app-modal-editar></app-modal-editar>
+                   <!-- <app-modal-editar></app-modal-editar> -->
            
                   <div *ngIf="editando && editandoProductos.id == p.id">
                        <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded" >

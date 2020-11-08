@@ -28,14 +28,16 @@
        </div>
        <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
         <form (ngSubmit)="agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
-            <div class="form-group"><input type="text" name="name" [(ngModel)]="p.name" class="form-control"></div>
+            <div class="form-group"><input type="text" name="name" [(ngModel)]="p.name" class="form-control">
+                <!-- {{producto.name = p.name}} -->
+            </div>
             <label>Cantidad:</label>
             <div class="form-group">
                 <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
                 <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
             </div>
             <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" />
-            <button type="submit" [disabled]="producto.cantidad === 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
+            <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
             <!-- <button (click)="editarProductos($event, p)" class="btn btn-success btn-block" >
                 Cancelar
             </button> -->
