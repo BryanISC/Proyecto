@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
-// import { PedidosService } from '../../servicios/productos.service'
-// import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AutorizacionService } from 'src/app/servicios/login/autorizacion.service'
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-lista-productos',
   templateUrl: './lista-productos.component.html',
-  styleUrls: ['./lista-productos.component.css']
+  styleUrls: ['./lista-productos.component.css'],
+  providers: [AutorizacionService],
 })
 export class ListaProductosComponent implements OnInit {
 
@@ -18,7 +19,9 @@ export class ListaProductosComponent implements OnInit {
 
   producto = {} as Productos;
 
-  constructor(public productosService: ProductosService) { }
+  public user$: Observable<any> = this.authSvc.afAuth.user;
+
+  constructor(public productosService: ProductosService, private authSvc: AutorizacionService) { }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(productos => {

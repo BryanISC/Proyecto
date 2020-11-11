@@ -2,7 +2,7 @@ form {
     width: 42%;
     float: left;
     
-    background-image: url('../../../assets/fondo.jpg');
+    background-image: url('../../../assets/noche.png');
     margin: 1cm;
     margin-top: 40px;
 }
@@ -16,6 +16,7 @@ h4 {
     margin: auto;
     font: italic bold 50px Georgia, Serif;
     text-shadow: -4px 3px 0 #4286f4;
+    
 }
 
 label {

@@ -1,13 +1,13 @@
 
 <div class="card-body">
-<div class="row" class="shadow p-3 mb-1 bg-white rounded">
+<div class="shadow p-3 mb-1 bg-white rounded">
     
         <div class="card">
             <div class="card-header">
                 <h5>Suelte la imagen aqui</h5>
                 
             </div>
-            <div class="Card-title">
+            <div class="Card-title icono">
                 <div appNgDominicodeFiles [files]="files" (mouseOver)="isOverDrop = $event" [ngClass]="{ 'file-over': isOverDrop }" class="drop-zone">
                 <img src="../../../assets/subir.png" alt="drop-images" />
                 <div class="vr">&nbsp;</div>
@@ -26,7 +26,7 @@
             <div class="card-header">
                 <h5>Archivos para subir</h5>
             </div>
-            <div class="Card-title">
+            <div class="Card-title subir">
                 <table class="table">
                     <thead>
                         <tr>

@@ -8,11 +8,10 @@
     .icono {
         width: 30px;
         height: 35px;
-        text-align: center;
+        /* text-align: center; */
     }
     
-    li{
-        
+    li{  
         float: left;
         padding: 20px;
         font: italic bold 15px Georgia, Serif;
@@ -23,6 +22,7 @@
     .form-control {
         height: 25px;
         width: 80px;
+        float: left;
         background: #00d2ff;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #928DAB, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #928DAB, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -50,11 +50,9 @@
         
         color: rgb(252, 7, 7);
     }
-    .cantidad {
-        position: absolute;
-        padding-top: 70px;
-        padding-left: 48px;
-    }
+    /* .cantidad {
+        
+    } */
 
     button {
         border-color: transparent;
@@ -79,13 +77,13 @@
 
      /* Cinta superior izquierda */
 
-     /* .shadow::before {
+     .oferta::before {
         position:absolute;
         top:0;
         left:0;
         display: block;
         box-sizing:border-box;
-        content:"¡Nuevo!";
+        content:"¡Oferta!";
         text-transform:uppercase;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 13px;
@@ -101,7 +99,7 @@
         transform: rotate(-45deg);
         left: -40px;
         top: 10px;
-    } */
+    }
 
     /* cinta debajo */
 

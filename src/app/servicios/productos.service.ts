@@ -62,8 +62,17 @@ export class ProductosService {
     this.productosDoc.update(productos);
    }
 
+   getPedidos() {
+    return this.pedidos;
+  }
+
    agregarPedidos(productos: Productos){
     this.pedidosCollection.add(productos);
+   }
+
+   borrarPedidos(productos: Productos) {
+    this.pedidosDoc = this.db.doc(`pedidos/${productos.id}`);
+    this.pedidosDoc.delete();
    }
 
    actualizarPedidos(productos: Productos) {

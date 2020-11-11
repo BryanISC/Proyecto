@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<h5>Lista de productos</h5>
+<br><h5>Lista de productos</h5>
 <div *ngIf="productos.length > 0; else noproductos" class="body" >
   <li *ngFor="let p of productos" class="list-group " >
     <div class="shadow p-3 mb-3 bg-white rounded">
@@ -38,7 +38,7 @@
     </div>
 
        <div *ngIf="editando && editandoProductos.id == p.id">
-            <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded" >
+            <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded editar" >
                 <div class="card-body mb-1" >
                     <img src='{{p.imagenUrl}}' alt="drop-images" />
                 </div>
@@ -62,8 +62,13 @@
                 <div class="form-group">
                     <input type="number" name="precio" [(ngModel)]="editandoProductos.precio" class="form-control"/> 
                 </div>
+                <div class="btn-group" data-toggle="buttons" style="float: left;">
+                    <label class="btn btn-primary active">oferta
+                        <input type="checkbox" [(ngModel)]="editandoProductos.oferta" name="oferta" id="" autocomplete="off">
+                    </label>
+                </div>
 
-                <button type="submit" class="btn btn-success btn-block">
+                <button type="submit" class="btn btn-success btn-block actualizar">
                     Actualizar
                 </button>
                 

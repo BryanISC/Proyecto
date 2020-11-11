@@ -23,12 +23,12 @@ img {
     background: transparent;
     position: absolute;
     /* position: relative; */
-    left: 320px;
+    left: 370px;
     top: -20px;
 }
 
 .sesion {
-    left: 240px;
+    left: 280px;
     top: 22px;
     background: #007BFF;
     border: transparent;

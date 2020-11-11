@@ -23,11 +23,16 @@ h5 {
     text-align: center;
     font-size: xx-large;
     font: italic bold 30px Georgia, Serif;
+    color: white;
+    
 }
 
 h6 {
     font: italic bold 18px Georgia, Serif;
 }
 
-
+.actualizar {
+    width: 100px;
+    
+}
 

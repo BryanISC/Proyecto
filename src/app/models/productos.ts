@@ -8,4 +8,6 @@ export interface Productos {
     cantidad?: number;
     categoria?: string;
     imagenUrl?: string;
+    oferta: boolean;
+    email: string;
 }

@@ -4,8 +4,8 @@
 <div *ngIf="productos.length > 0; else noproductos" class="body">
     <form *ngFor="let p of productos" >
     <ul >
-     <li  class="list-group" >
-       <div  class="shadow bg-white rounded "> 
+     <li  class="list-group" *ngIf="user$ | async as user; else loading">
+       <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta"> 
        <!-- <div class="card"  > -->
         <div class="zoom">
            <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
@@ -16,7 +16,6 @@
         <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
         <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
        </div>
-       
         <h6>RD$ {{p.precio}}.00</h6>
         <!-- <button class="btn btn-dark btn-block col-md-12">
             seleccionar
@@ -27,10 +26,9 @@
         </button> -->
        </div>
        <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
-        <form (ngSubmit)="agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
-            <div class="form-group"><input type="text" name="name" [(ngModel)]="p.name" class="form-control">
-                <!-- {{producto.name = p.name}} -->
-            </div>
+        <form (ngSubmit)="producto.name = p.name; 
+        producto.descripcion = p.descripcion; producto.email = user.email; 
+        agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
             <label>Cantidad:</label>
             <div class="form-group">
                 <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
