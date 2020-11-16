@@ -10,4 +10,5 @@ export interface Productos {
     imagenUrl?: string;
     oferta: boolean;
     email: string;
+    pedido: boolean;
 }

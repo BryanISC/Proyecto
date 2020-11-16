@@ -14,8 +14,8 @@ h4 {
     padding-top: 10px;
     text-align: center;
     margin: auto;
-    font: italic bold 50px Georgia, Serif;
-    text-shadow: -4px 3px 0 #4286f4;
+    font: italic bold 30px Georgia, Serif;
+    color: white;
     
 }
 
@@ -23,5 +23,9 @@ label {
     font: italic bold 25px Georgia, Serif;
     color: white;
     line-height: 60px;
+}
+
+button {
+    background-color: #007BFF;
 }
 

@@ -11,7 +11,7 @@ import { ModalComponent } from './componentes/lista-productos/modal/modal.compon
 import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
-
+import { CarritoComponent } from './componentes/carrito/carrito.component';
 
 
 const routes: Routes = [
@@ -29,7 +29,8 @@ const routes: Routes = [
   {path: 'modal-editar', component: ModalEditarComponent},
   {path: 'carrusel', component: CarruselComponent},
   { path: 'recuperar-password', loadChildren: () => import('./componentes/recuperar-password/recuperar-password.module').then(m => m.RecuperarPasswordModule) },
-  {path: 'pedidos', component: PedidosComponent}
+  {path: 'pedidos', component: PedidosComponent},
+  {path: 'carrito', component: CarritoComponent},
  
 
 ];

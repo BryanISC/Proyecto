@@ -6,9 +6,11 @@
     }
 
     .icono {
-        width: 30px;
+        width: 80px;
         height: 35px;
         /* text-align: center; */
+        border-radius: 20%;
+        
     }
     
     li{  
@@ -20,12 +22,22 @@
     }
     
     .form-control {
-        height: 25px;
-        width: 80px;
+        height: 40px;
+        width: 100px;
         float: left;
-        background: #00d2ff;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #928DAB, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #928DAB, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #dbdbdb;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #928DAB, #dbdbdb);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #928DAB, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .form-group {
+        height: 10%;
+        border: transparent;
+        background: #dbdbdb;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #928DAB, #dbdbdb);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #928DAB, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-radius: 20%;
+        
     }
     
     h5 {
@@ -48,28 +60,17 @@
         font-weight: 800;
         margin: 0;
         
-        color: rgb(252, 7, 7);
+        color: black;
     }
-    /* .cantidad {
-        
-    } */
 
     button {
         border-color: transparent;
         /* background-color: white; */
-        
-        border-radius: 100%;
-        background: transparent;
+        width: 50%;
+        /* border-radius: 100%; */
+        background-color: #007BFF;
         
     }
-
-   
-     /* ul {
-        background: #00d2ff; 
-        background: -webkit-linear-gradient(to right, #928DAB, #00d2ff);
-        background: linear-gradient(to right, #928DAB, #00d2ff);
-     } */
-
 
      .shadow {
         position:relative;
@@ -94,39 +95,12 @@
         height:0;
         width:150px;                      
         border:25px solid transparent;
-        border-bottom:25px solid purple;
+        border-bottom:25px solid #007BFF;
         line-height:23px;
         transform: rotate(-45deg);
         left: -40px;
         top: 10px;
     }
-
-    /* cinta debajo */
-
-    /* .shadow::after {
-        position:absolute;
-        top:0;
-        left:0;
-        display: block;
-        box-sizing:border-box;
-        content:"coca cola";
-        text-transform:uppercase;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 13px;
-        text-align:center;
-        font-weight: 700;
-        color: #fff;
-
-        background: transparent; 
-        height:0;
-        width:150px;                      
-        border:px solid transparent;
-        border-bottom:25px solid rgb(0, 0, 0);
-        line-height:23px;
-        transform: rotate(0deg);
-        box-shadow: 0px 3px 5px -3px #000;
-        top: 225px;
-    } */
 
     .cinta {
         position:absolute;

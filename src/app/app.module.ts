@@ -21,7 +21,6 @@ import { SubirImagenRoutingModule } from './componentes/subir-imagen/subir-image
 import { SubirImagenComponent } from './componentes/subir-imagen/subir-imagen.component';
 import { NgDominicodeFilesDirective } from './componentes/subir-imagen/directivas/ng-dominicode-files.directive';
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
-import { ClientesPedidosComponent } from './componentes/clientes-pedidos/clientes-pedidos.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -34,6 +33,7 @@ import { ModalComponent } from './componentes/lista-productos/modal/modal.compon
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
+import { CarritoComponent } from './componentes/carrito/carrito.component';
 
 
 
@@ -46,7 +46,6 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
     SubirImagenComponent, 
     NgDominicodeFilesDirective, 
     PedidosComponent, 
-    ClientesPedidosComponent,
     NavbarComponent,
     HomeComponent,
     EnviarEmailComponent,
@@ -54,6 +53,7 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
     ModalComponent,
     ModalEditarComponent,
     CarruselComponent,
+    CarritoComponent,
    
     
     

@@ -13,12 +13,25 @@ export class PedidosComponent implements OnInit {
   editandoProductos: Productos;
   editando: boolean = false;
 
-  constructor(public productosService: ProductosService,) { }
+  constructor(public productosService: ProductosService) { }
 
   ngOnInit() {
     this.productosService.getPedidos().subscribe(productos => {
       this.productos = productos;
     });
+  }
+
+  actualizarPedidos() {
+    if(confirm('Estas seguro?')){
+    this.productosService.actualizarPedidos(this.editandoProductos);
+    this.editandoProductos = {} as Productos;
+    this.editando = false;
+    }
+  }
+
+  editarProductos(event, productos) {
+    this.editandoProductos = productos;
+    this.editando = !this.editando;
   }
 
   borrarPedidos(event, productos) {

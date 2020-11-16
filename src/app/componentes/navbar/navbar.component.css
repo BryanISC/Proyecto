@@ -23,12 +23,12 @@ img {
     background: transparent;
     position: absolute;
     /* position: relative; */
-    left: 370px;
+    left: 340px;
     top: -20px;
 }
 
 .sesion {
-    left: 280px;
+    left: 250px;
     top: 22px;
     background: #007BFF;
     border: transparent;
@@ -38,7 +38,7 @@ img {
 .email {
     position: absolute;
     top: -2px;
-    left: 1230px;
+    left: 1210px;
     color: white;
 }
 

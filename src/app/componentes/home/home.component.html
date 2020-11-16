@@ -1,16 +1,6 @@
-<!-- <nav class="navbar navbar-dark bg-dark ">
-  <a class="navbar-brand" href="/">HOME</a>
-  <a href="login">login</a>
-  <a href="registro">registro</a>
-  <a href="navbar">navbar</a>
-  <a href="productos">productos</a>
-  <a href="productos-form">productos form</a>
-
-  </nav> -->
-  
   <app-navbar></app-navbar>
   <app-carrusel></app-carrusel>
-  <body>
+
   <h1>Ofertas del mes</h1><hr class="linea_izquierda"><hr class="linea_derecha">
     
   <div *ngIf="productos.length > 0; else noproductos" class="body">
@@ -29,7 +19,8 @@
         <h6>RD$ {{p.precio}}.00</h6>
        </div>
        <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
-        <form (ngSubmit)="producto.name = p.name; producto.descripcion = p.descripcion; agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
+        <form (ngSubmit)="producto.name = p.name; producto.descripcion = p.descripcion; producto.email = user.email; 
+        producto.pedido = true; producto.precio = p.precio; agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
             <label>Cantidad:</label>
             <div class="form-group">
 
@@ -43,11 +34,43 @@
     </li>
     </ul>
     </form>
-</div>   
+</div>
 
-<ng-template #noproductos>
-    <p>No hay productos</p>
-</ng-template>  
+
+<h1>Productos</h1><hr class="comida_izquierda"><hr class="comida_derecha">
+
+<div *ngIf="productos.length > 0; else noproductos">
+  <form *ngFor="let p of productos" >
+  <ul >
+   <li class="list-group" *ngIf="p.oferta == false" >
+     <div class="shadow bg-white rounded "> 
+
+      <div class="zoom">
+         <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+      </div>
+
+     <div class="cinta uno">
+      <a >{{p.name}}</a>
+     </div>
+      <h6>RD$ {{p.precio}}.00</h6>
+     </div>
+     <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
+      <form (ngSubmit)="producto.name = p.name; producto.descripcion = p.descripcion; producto.email = user.email; 
+      producto.pedido = true; producto.precio = p.precio; agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
+          <label>Cantidad:</label>
+          <div class="form-group">
+
+              <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
+          </div>
+          <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" />
+          <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images" /></button>
+
+      </form>
+ </div>
+  </li>
+  </ul>
+  </form>
+</div>
 
   <!-- pie de pagina -->
     <!-- <footer class="py-4 bg-dark text-white-50">
@@ -55,13 +78,15 @@
         <small>Copyright &copy; Your Website</small>
       </div>
     </footer> -->
-</body>
+
    
   <!-- <img src="../../../assets/dona.jpg" alt="drop-images" class="bocadillo shadow "/>
   <img src="../../../assets/comida.jpg" alt="drop-images" class="comida shadow "/> -->
   <!-- <img src="../../../assets/dona.jpg" alt="drop-images" class="shadow "/>
   <img src="../../../assets/dona.jpg" alt="drop-images" class="shadow "/> -->
     
- 
+<ng-template #noproductos>
+    <p>No hay productos</p>
+</ng-template> 
     
   

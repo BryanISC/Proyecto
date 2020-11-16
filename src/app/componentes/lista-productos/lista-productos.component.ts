@@ -39,7 +39,7 @@ export class ListaProductosComponent implements OnInit {
 
   actualizarPedidos() {
     if(confirm('Estas seguro de querer actualizarlo?')){
-    this.productosService.actualizarProductos(this.editandoProductos);
+    this.productosService.actualizarPedidos(this.editandoProductos);
     this.editandoProductos = {} as Productos;
     this.editando = false;
     }

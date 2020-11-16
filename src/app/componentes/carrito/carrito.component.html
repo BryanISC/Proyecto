@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<br><h1>Carrito de compra</h1>
+<!-- <frameset></frameset> -->
+<div class="card card-body">
+<div *ngIf="productos.length > 0; else noproductos" >
+<div *ngFor="let p of productos" class="body">
+    <form *ngIf="user$ | async as user;" class="contenedor">
+     <li *ngIf="p.email == user?.email && p.pedido == true " class="list-group carta" >
+       <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta"> 
+        <!-- <div class="email">
+            <h6 class="correo">{{p.email}}</h6>
+        </div>    -->
+        <h6 class="datos">Producto: {{p.name}}</h6>
+        <h6 class="datos">Descripción: {{p.descripcion}}</h6>
+        <h6 class="datos">Cantidad: {{p.cantidad}} ud</h6>
+        <h6 class="datos">Precio: RD${{p.precio}}.00</h6>
+        <!-- <h6 class="datos">Precio: {{p.precio * p.cantidad}}</h6> -->
+        <button (click)="borrarPedidos($event, p)" class="btn btn-primary boton">
+            Eliminar
+        </button>
+       </div>
+       <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
+        <form (ngSubmit)="producto.name = p.name; agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
+            <label>Cantidad:</label>
+            <div class="form-group">
+                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
+            </div>
+            <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" />
+            <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
+        </form>
+   </div>
+    </li>
+    </form>
+</div> 
+</div>
+
+
+<h6 class="datos">Monto total: RD${{producto.precio * producto.cantidad}}.00</h6>
+    
+        
+    <button type="submit" class="btn mt-4 btn-dark btn-block col-md-12">
+        Realizar pedido
+    </button>
+
+
+</div>
+
+<ng-template #noproductos>
+    <p>No hay productos</p>
+</ng-template>

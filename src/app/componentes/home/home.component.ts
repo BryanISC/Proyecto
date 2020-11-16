@@ -23,4 +23,34 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  agregarPedidos(){
+    if(confirm('Estas seguro de su selección?')){
+      this.productosService.agregarPedidos(this.producto);
+      console.log(this.producto);
+    }
+    
+  }
+
+  actualizarPedidos() {
+    if(confirm('Estas seguro de querer actualizarlo?')){
+    this.productosService.actualizarPedidos(this.editandoProductos);
+    this.editandoProductos = {} as Productos;
+    this.editando = false;
+    }
+  }
+
+  actualizarProductos() {
+    if(confirm('Estas seguro de querer actualizarlo?')){
+    this.productosService.actualizarProductos(this.editandoProductos);
+    this.editandoProductos = {} as Productos;
+    this.editando = false;
+    }
+    
+  }
+
+  editarProductos(event, productos) {
+    this.editandoProductos = productos;
+    this.editando = !this.editando;
+  }
+
 }

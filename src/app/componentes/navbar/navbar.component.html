@@ -13,9 +13,10 @@
   </div>
     <a class="navbar-brand" href="\">Home</a>
     <a class="navbar-brand" href="lista-productos">Lista de productos</a>
-    <a class="navbar-brand" href="productos">productos</a>
+    <a class="navbar-brand" href="productos">Productos</a>
     <a class="navbar-brand" href="productos-form">Registro de productos</a>
-    <a class="navbar-brand" href="pedidos">pedidos</a>
+    <a class="navbar-brand" href="pedidos">Pedidos</a>
+    
     <!-- <a class="navbar-brand" href="recuperar-password">Recuperar contraseña</a> -->
     <!-- <a class="navbar-brand" href="verificacion-email">Email</a> -->
     <!-- <a class="navbar-brand" href="modal">Modal</a> -->
@@ -38,10 +39,10 @@
             [attr.aria-expanded]="!usuario" aria-controls="id">
             <img src="../../../assets/usuario.png" class="icono" alt="drop-images"   />
     </button> -->
-    <button class="carrito">
-    <img src="../../../assets/carrito.png" class="car" alt="drop-images"   />
+    <button class="carrito" >
+      <a href="carrito"><img src="../../../assets/carrito.png"  class="car" alt="drop-images"   /></a>
     </button>
-
+    <span class="w3-badge w3-green">0</span>
       <div class="collapse navbar-collapse" >
         <!-- <ul class="navbar-nav mr-auto">
           <li class="nav-item active" *ngIf="user$ | async as user">
