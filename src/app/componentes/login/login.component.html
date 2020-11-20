@@ -2,32 +2,33 @@
     <div class="col-md-6 mx-auto mt-5">
       <div class="card">
         <div class="card-body">
+          <img src="../../../assets/logo.png" class="logo" alt="drop-images"   />
           <h1 class="text-center">INICIO DE SESIÓN</h1>
           <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" formControlName="email" />
+            <div class="form-group mt-5">
+              <img src="../../../assets/email.ico" class="email" alt="drop-images"   />
+              <!-- <label for="email">Email</label> -->
+              <input type="email" class="form-control" formControlName="email" placeholder="Email" />
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                formControlName="password"
-              />
+            <br><div class="form-group">
+              <img src="../../../assets/password.ico" class="email" alt="drop-images"   />
+              <!-- <label for="password">Password</label> -->
+              <input type="password" class="form-control" formControlName="password" placeholder="Contraseña"/>
             </div>
-            <button class="btn btn-primary btn-lg btn-block" >
+            <button class="btn btn-primary btn-lg btn-block mt-5" >
               Ingresar
             </button>
           </form>
-          <div class="form-group mt-3">
+          <div class="form-group mt-4">
             <p>
-              Create una cuenta <a [routerLink]="['/registro']"> Registro </a>
+               <a [routerLink]="['/registro']"> <img src="../../../assets/crear-cuenta.ico" class="email" alt="drop-images"   />  </a>
+               Create una cuenta
             </p>
           </div>
           <div class="form-group mt-3">
             <p>
-              <a [routerLink]="['/recuperar-password']"> Recuperar contraseña ? </a>
+              <a [routerLink]="['/recuperar-password']"> <img src="../../../assets/recuperar-cuenta.ico" class="email" alt="drop-images"   /> </a>
+              Recuperar contraseña ?
             </p>
           </div>
         </div>

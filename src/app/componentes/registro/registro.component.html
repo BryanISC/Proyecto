@@ -2,17 +2,20 @@
     <div class="col-md-6 mx-auto mt-5">
       <div class="card">
         <div class="card-body">
+          <img src="../../../assets/logo.png" class="logo" alt="drop-images"   />
           <h1 class="text-center">REGISTRO</h1>
           <form [formGroup]="registroForm" (ngSubmit)="onRegister()">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" formControlName="email" />
+            <div class="form-group mt-5">
+              <img src="../../../assets/email.ico" class="email" alt="drop-images"   />
+              <!-- <label for="email">Email</label> -->
+              <input type="email" class="form-control" [(ngModel)]="producto.email" formControlName="email" placeholder="Email"/>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" formControlName="password"/>
+            <br><div class="form-group">
+              <img src="../../../assets/password.ico" class="email" alt="drop-images"   />
+              <!-- <label for="password">Password</label> -->
+              <input type="password" class="form-control" formControlName="password" placeholder="Contraseña"/>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" >
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-5" >
               Registro
             </button>
           </form>

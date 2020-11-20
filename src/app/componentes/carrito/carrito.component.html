@@ -11,10 +11,18 @@
         <!-- <div class="email">
             <h6 class="correo">{{p.email}}</h6>
         </div>    -->
-        <h6 class="datos">Producto: {{p.name}}</h6>
-        <h6 class="datos">Descripción: {{p.descripcion}}</h6>
-        <h6 class="datos">Cantidad: {{p.cantidad}} ud</h6>
-        <h6 class="datos">Precio: RD${{p.precio}}.00</h6>
+        <div class="zoom">
+            <img [src]="p.imageUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+         </div>
+        <!-- <h6>{{p.descripcion}}</h6>  -->
+        <div class="cinta uno">
+         <a >{{p.name}}</a>
+         <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
+         <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
+        </div>
+         <h6>RD$ {{p.precio}}.00</h6>
+         <h6>Cantidad: {{p.cantidad}}ud</h6>
+         <h6>Total: RD${{p.precio * p.cantidad}}.00</h6>
         <!-- <h6 class="datos">Precio: {{p.precio * p.cantidad}}</h6> -->
         <button (click)="borrarPedidos($event, p)" class="btn btn-primary boton">
             Eliminar
@@ -45,6 +53,9 @@
 
 
 </div>
+
+<br>
+<app-footer></app-footer>
 
 <ng-template #noproductos>
     <p>No hay productos</p>

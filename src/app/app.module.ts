@@ -34,6 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 
 
@@ -54,6 +55,7 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
     ModalEditarComponent,
     CarruselComponent,
     CarritoComponent,
+    FooterComponent,
    
     
     

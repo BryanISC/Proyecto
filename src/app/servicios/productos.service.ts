@@ -4,8 +4,6 @@ import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Productos } from '../models/productos';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +19,12 @@ export class ProductosService {
   pedidos: Observable<Productos[]>;
   pedidosDoc: AngularFirestoreDocument<Productos>;
 
+  // variables de los correos
+
+  correoCollection: AngularFirestoreCollection<Productos>;
+  correo: Observable<Productos[]>;
+  correoDoc: AngularFirestoreDocument<Productos>;
+
 
   constructor(public db: AngularFirestore) {
     //this.productos = this.db.collection('productos').valueChanges();
@@ -35,6 +39,15 @@ export class ProductosService {
 
     this.pedidosCollection = this.db.collection('pedidos');
     this.pedidos = this.pedidosCollection.snapshotChanges().pipe(map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Productos;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
+
+    this.correoCollection = this.db.collection('Email');
+    this.correo = this.correoCollection.snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Productos;
         data.id = a.payload.doc.id;
@@ -78,6 +91,14 @@ export class ProductosService {
    actualizarPedidos(productos: Productos) {
     this.pedidosDoc = this.db.doc(`pedidos/${productos.id}`);
     this.pedidosDoc.update(productos);
+   }
+
+   getEmail() {
+    return this.correo;
+  }
+
+   agregarEmail(productos: Productos){
+    this.correoCollection.add(productos);
    }
 
 }

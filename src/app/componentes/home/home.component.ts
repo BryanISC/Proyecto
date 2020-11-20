@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
+import { AutorizacionService } from 'src/app/servicios/login/autorizacion.service'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [AutorizacionService],
 })
 export class HomeComponent implements OnInit {
 
@@ -15,7 +18,9 @@ export class HomeComponent implements OnInit {
 
   producto = {} as Productos;
 
-  constructor(public productosService: ProductosService) { }
+  public user$: Observable<any> = this.authSvc.afAuth.user;
+
+  constructor(public productosService: ProductosService, private authSvc: AutorizacionService) { }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(productos => {
@@ -52,5 +57,6 @@ export class HomeComponent implements OnInit {
     this.editandoProductos = productos;
     this.editando = !this.editando;
   }
+  
 
 }

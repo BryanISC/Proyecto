@@ -28,7 +28,7 @@
        <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
         <form (ngSubmit)="producto.name = p.name; 
         producto.descripcion = p.descripcion; producto.email = user.email; producto.pedido = true; producto.precio = p.precio;
-        agregarPedidos()" class="shado bg-white rounded" >
+        producto.imageUrl = p.imagenUrl; agregarPedidos()" class="shado bg-white rounded" >
             <!-- <label>Cantidad:</label> -->
             <div class="form-group">
                 <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
@@ -50,7 +50,34 @@
     </ul>
     </form>
 </div>   
-
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <app-footer></app-footer>
 <ng-template #noproductos>
     <p>No hay productos</p>
 </ng-template>

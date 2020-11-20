@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<br><h1>Pedidos</h1>
+<h1>Pedidos</h1>
 <div *ngIf="productos.length > 0; else noproductos" class="body">
     <form *ngFor="let p of productos" class="contenedor">
      <li class="list-group carta" *ngIf="p.pedido == true">

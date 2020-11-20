@@ -7,6 +7,11 @@ img {
     font-size: 16px;
 }
 
+.nombre {
+    font-size: 30px;
+    font-family: "algerian";
+}
+
 .navbar {
     height: 40px;
     width: 100%;
@@ -16,35 +21,30 @@ img {
     border: transparent;
     background: transparent;
     /* position: absolute; */
+    
 }
 
 .btn {
     border: transparent;
     background: transparent;
-    position: absolute;
+    /* position: absolute; */
     /* position: relative; */
-    left: 340px;
-    top: -20px;
+    /* left: 340px;
+    top: -20px; */
+    
 }
 
 .sesion {
-    left: 250px;
-    top: 22px;
+    
     background: #007BFF;
     border: transparent;
     text-align: center;
 }
 
-.email {
-    position: absolute;
-    top: -2px;
-    left: 1210px;
-    color: white;
-}
-
 .carrito {
     background: transparent;
     border: transparent;
+
 }
 
 .carrito:hover .car {-webkit-transform:scale(0.9);transform:scale(0.9);}
@@ -52,3 +52,33 @@ img {
 
 .menu:hover .icono {-webkit-transform:scale(0.9);transform:scale(0.9);}
 .menu {overflow:hidden;}
+
+.logo {
+    width: 80px;
+    height: 50px;
+}
+
+.cont{
+    height:120%;
+    /* padding-top:0px; */
+    float:right;
+    padding-left: 30px;
+}
+
+
+input[type="search"]{
+    width:170px;
+    /* margin:10px; */
+    /* padding:10px 16px; */
+    border-radius:32px;
+    outline:none;
+    border:2px solid #ffffff;
+    background:#ffffff;
+    transition:all 0.5s;
+    
+}
+input[type="search"]:focus{
+    background:#fff;
+    width:300px;
+    padding-left: 30px;
+}

@@ -34,6 +34,7 @@ export class ListaProductosComponent implements OnInit {
       this.productosService.agregarPedidos(this.producto);
       console.log(this.producto);
     }
+    alert('Producto agregado al carrito');
     
   }
 

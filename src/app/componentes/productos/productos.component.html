@@ -5,7 +5,7 @@
   <li *ngFor="let p of productos" class="list-group " >
     <div class="shadow p-3 mb-3 bg-white rounded">
     <div class="card-body mb-1 "  >
-        <img [src]="p.imagenUrl" alt="drop-images" class="imagen"/>
+        <img [src]="p.imagenUrl" alt="drop-images" class="imagenProducto"/>
     </div>
     <label>Nombre:</label>
     <div class="form-control mb-1" >
@@ -28,7 +28,7 @@
         <h6>RD$ {{p.precio}}.00</h6>
     </div>
         
-        <button (click)="borrarProductos($event, p)" class="zafacon" style="margin: 20px">
+        <button (click)="borrarProductos($event, p)" class="zafacon" >
             <img src="../../../assets/eliminar.png" class="icono" alt="drop-images" />
         </button>
         <button (click)="editarProductos($event, p)" class="lapiz">
@@ -40,29 +40,29 @@
        <div *ngIf="editando && editandoProductos.id == p.id">
             <form (ngSubmit)="actualizarProductos()" class="shadow p-3 mb-5 bg-white rounded editar" >
                 <div class="card-body mb-1" >
-                    <img src='{{p.imagenUrl}}' alt="drop-images" />
+                    <img src='{{p.imagenUrl}}' alt="drop-images" class="imagenProducto"  />
                 </div>
                 <label>Nombre:</label>
                 <div class="form-group mb-1">
                     <input type="text" name="name" [(ngModel)]="editandoProductos.name" class="form-control">
                 </div>
                 <label>Descripcion:</label>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <input type="text" name="descripcion" [(ngModel)]="editandoProductos.descripcion" class="form-control">
                 </div>
                 <label>Cantidad:</label>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/> 
                 </div>
                 <label>Categoria:</label>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <input type="text" name="categoria" [(ngModel)]="editandoProductos.categoria" class="form-control"/> 
                 </div>
                 <label>Precio:</label>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <input type="number" name="precio" [(ngModel)]="editandoProductos.precio" class="form-control"/> 
                 </div>
-                <div class="btn-group" data-toggle="buttons" style="float: left;">
+                <div class="btn-group" data-toggle="buttons" style="float: left; ">
                     <label class="btn btn-primary active">oferta
                         <input type="checkbox" [(ngModel)]="editandoProductos.oferta" name="oferta" id="" autocomplete="off">
                     </label>

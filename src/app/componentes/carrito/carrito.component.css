@@ -1,12 +1,6 @@
-.imagen {
-    width: 200px;
-    height: 250px;
-    box-shadow: 0 0 8px 8px white inset;
-    
-    }
     .card {
-        width: 50%;
-        left: 25%;
+        width: 55%;
+        left: 23%;
     }
 
     .icono {
@@ -110,3 +104,93 @@
         position: sticky;
         top: 0; 
     } */
+
+    .imagen {
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 0 8px 8px white inset;
+        
+        }
+    
+        .icono {
+            width: 80px;
+            height: 35px;
+            /* text-align: center; */
+            border-radius: 20%;
+            
+        }
+        
+        li{  
+            float: left;
+            padding: 20px;
+            font: italic bold 15px Georgia, Serif;
+            /* background-color: #00d2ff; */
+            /* border: solid; */
+        }
+        
+        .form-control {
+            height: 40px;
+            width: 100px;
+            float: left;
+            background: #dbdbdb;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #928DAB, #dbdbdb);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #928DAB, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    
+        .form-group {
+            height: 10%;
+            border: transparent;
+            background: #dbdbdb;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #928DAB, #dbdbdb);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #928DAB, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            border-radius: 20%;
+            
+        }
+        
+        h5 {
+            text-align: center;
+            /* font-size: xx-large;*/
+            font: 20px gotham-regular, sans-serif;
+            font-weight: 500;
+            padding: 10px; 
+            margin: 0;   
+        }
+        
+        a {
+            color: rgb(248, 246, 246);
+        }
+    
+        h6 {
+            text-align: center;
+            padding: 10px;
+            font:  20px gotham-bold;
+            font-weight: 800;
+            margin: 0;
+            
+            color: black;
+        }
+
+        .cinta {
+            position:absolute;
+            top:150px;
+            left:0px;
+            display: block;
+            box-sizing:border-box;
+            text-transform:uppercase;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+            text-align:center;
+            font-weight: 700;
+            color: rgb(248, 246, 246);
+            background: transparent; 
+            height:0;
+            width:200px;                      
+            border: 25px solid transparent;
+            border-bottom:25px solid rgb(0, 0, 0);
+            line-height:23px;
+            transform: rotate(0deg);
+            /* box-shadow: 0px 3px 5px -3px rgb(129, 10, 10); */
+            content: "";
+            opacity: .5;
+            }
+    

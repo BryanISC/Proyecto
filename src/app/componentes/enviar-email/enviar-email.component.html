@@ -1,23 +1,17 @@
-<!-- <div class="card mt-5" *ngIf="user$ | async as user; else loading">
-    <div class="card-body">
-      <h3 class="card-title text-center">Gracias por registrarte!</h3>
-      <div class="form-group mt-2">
-        <p class="text-center">
-          We have sent a confirmation email to <strong>{{ user?.email }}</strong>
-        </p>
-        <p class="text-center">
-          Please check your email and click on the link to verify your email
-          address.
-        </p>
-      </div>
-      <div class="form-group text-center mt-5">
-        <button class="btn btn-primary" (click)="onSendEmail()">
-          Resend verification email
-        </button>
-      </div>
+<app-navbar></app-navbar>
+<h3 class="card-title text-center">Envio de correo a usuarios</h3>
+<div *ngIf="productos.length > 0;" class="card mt-2" >
+    <h5>Usuarios registrados </h5>
+  <div *ngFor="let p of productos" class="card-body" >  
+    <strong >{{ p.email }}</strong>
+    </div>
+    <div class="form-group text-center mt-5">
+      <button class="btn btn-primary" (click)="onSendEmail()">
+        Enviar correo
+      </button>
     </div>
   </div>
   
   <ng-template #loading>
     Loading....
-  </ng-template> -->
+  </ng-template>

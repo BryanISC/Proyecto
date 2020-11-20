@@ -1,21 +1,21 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
+    <a class="navbar-brand nombre" href="\">Cibao Service</a>
     <button type="button" class="menu" (click)="menu = !menu"
             [attr.aria-expanded]="!menu" aria-controls="collapseExample">
             <img src="../../../assets/menu.png" class="icono" alt="drop-images"   />
     </button>
-
+    
   <div id="collapseExample" [ngbCollapse]="menu">    
-        <!-- <a class="navbar-brand" href="\">Home</a> -->
-        <!-- <a class="navbar-brand" href="lista-productos">Lista de productos</a>
-        <a class="navbar-brand" href="productos">productos</a>
-        <a class="navbar-brand" href="productos-form">Registro de productos</a> -->
-  </div>
-    <a class="navbar-brand" href="\">Home</a>
+    
     <a class="navbar-brand" href="lista-productos">Lista de productos</a>
     <a class="navbar-brand" href="productos">Productos</a>
     <a class="navbar-brand" href="productos-form">Registro de productos</a>
-    <a class="navbar-brand" href="pedidos">Pedidos</a>
+  </div>
+    <!-- <a class="navbar-brand" href="\">Home</a>
+    <a class="navbar-brand" href="lista-productos">Lista de productos</a>
+    <a class="navbar-brand" href="productos">Productos</a>
+    <a class="navbar-brand" href="productos-form">Registro de productos</a> -->
+    <!-- <a class="navbar-brand" href="pedidos">Pedidos</a> -->
     
     <!-- <a class="navbar-brand" href="recuperar-password">Recuperar contraseña</a> -->
     <!-- <a class="navbar-brand" href="verificacion-email">Email</a> -->
@@ -40,17 +40,33 @@
             <img src="../../../assets/usuario.png" class="icono" alt="drop-images"   />
     </button> -->
     <button class="carrito" >
+      <a href="enviar-email"><img src="../../../assets/email.png"  class="car" alt="drop-images"   /></a>
+    </button>
+    <button class="carrito" >
+      <a href="pedidos"><img src="../../../assets/pedido.ico"  class="car" alt="drop-images"   /></a>
+    </button>
+    <button class="carrito" >
       <a href="carrito"><img src="../../../assets/carrito.png"  class="car" alt="drop-images"   /></a>
     </button>
     <span class="w3-badge w3-green">0</span>
-      <div class="collapse navbar-collapse" >
+    
+    <!-- Buscador -->
+    <div class="cont">
+      <input type="search" placeholder="Buscar" title="Presione Esc para supender la búsqueda">
+    </div>
+
+    
+      <div class="collapse navbar-collapse" style="float: none;">
         <!-- <ul class="navbar-nav mr-auto">
           <li class="nav-item active" *ngIf="user$ | async as user">
             <a class="nav-link" routerLink="/upload-image">Upload</a>
           </li>
         </ul> -->
         <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
-          <div ngbDropdown class="d-inline-block" style="position: absolute;">
+          <li class="email">
+            <a class="nav-link" style="color: white;"> {{ user?.email }}</a>
+          </li>
+          <div ngbDropdown class="d-inline-block" >
             <button class="btn" id="dropdownBasic1" ngbDropdownToggle>
               <img src="../../../assets/usuario.png" class="usuario" alt="drop-images"   />
             </button>
@@ -63,9 +79,7 @@
               <a href="login" class="nav-link" (click)="onLogout()">Cerrar sesión</a>
             </li>
           </div> -->
-          <li class="email">
-            <a class="nav-link" style="color: white;"> {{ user?.email }}</a>
-          </li>
+          
         </ul>
         <ng-template #login>
           <!-- <ul class="navbar-nav mx-auto">
@@ -79,3 +93,35 @@
         </ng-template>
       </div>
   </nav>
+
+
+<!-- Navbar inferior -->
+
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <button type="button" class="menu" (click)="menu = !menu"
+            [attr.aria-expanded]="!menu" aria-controls="collapseExample">
+            <img src="../../../assets/logo.png" class="logo" alt="drop-images"   />
+    </button>
+
+  <div id="collapseExample" [ngbCollapse]="menu">    
+
+  </div>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" >
+        
+      </div>
+  </nav> -->
