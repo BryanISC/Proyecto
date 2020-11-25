@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AutorizacionService } from '../../servicios/login/autorizacion.service';
 import { Router } from '@angular/router';
+import { ProductosService } from '../../servicios/productos.service';
+import { Productos } from 'src/app/models/productos';
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +13,18 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent{
 
+  productos = [];
+  editandoProductos: Productos;
+  editando: boolean = false;
+
+  producto = {} as Productos;
+
   public menu = true;
   public usuario = true;
 
   public user$: Observable<any> = this.authSvc.afAuth.user;
 
-  constructor(public authSvc: AutorizacionService, private router: Router) {}
+  constructor(public authSvc: AutorizacionService, private router: Router, public productosService: ProductosService) {}
 
   async onLogout() {
     try {
@@ -25,6 +33,12 @@ export class NavbarComponent{
     } catch (error) {
       console.log(error);
     }
+  }
+
+  ngOnInit() {
+    this.productosService.getEmail().subscribe(productos => {
+      this.productos = productos;
+    });
   }
 }
 

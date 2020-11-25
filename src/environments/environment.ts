@@ -12,6 +12,9 @@ export const environment = {
   storageBucket: "prueba-bf4c8.appspot.com",
   messagingSenderId: "508138388298",
   appId: "1:508138388298:web:a40e456e20e6b80bad9fb3"
+  },
+  stripe: {
+    stripe_key: 'pk_test_51HqUfNG00OUBPhyxc9MO3hJ80muN4UZK3Zzc83P1MnIvW86k8TPVKsAK8ZoOBW7lzx287jGjx0fU5pbaim5YNnz500gadENrFC'
   }
 };
 

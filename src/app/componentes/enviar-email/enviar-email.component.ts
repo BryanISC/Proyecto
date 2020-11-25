@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { AutorizacionService } from '../../servicios/login/autorizacion.service';
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +19,9 @@ export class EnviarEmailComponent implements OnInit {
   productos = [];
   producto = {} as Productos ;
 
-  constructor(private authSvc: AutorizacionService, public productosService: ProductosService) { }
+  userEmail = new FormControl('');
+
+  constructor(private authSvc: AutorizacionService, public productosService: ProductosService, private router:Router) { }
 
   ngOnInit() {
     this.productosService.getEmail().subscribe(productos => {
@@ -25,9 +29,20 @@ export class EnviarEmailComponent implements OnInit {
     });
   }
 
-  onSendEmail(): void {
-    this.authSvc.enviarVerificacionEmail();
+  // onSendEmail(): void {
+  //   this.authSvc.enviarVerificacionEmail();
     
+  // }
+
+  async onReset() {
+    try{
+      const email = this.userEmail.value;
+      await this.authSvc.resetPassword(email);
+      window.alert('Estas seguro de la direccion de correo?');
+      alert('Correo enviado correctamente');
+      // this.router.navigate(['/enviar-email'])
+    }
+    catch(error){console.log(error)}
   }
 
 }

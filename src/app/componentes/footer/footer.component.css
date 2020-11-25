@@ -1,7 +1,7 @@
 /* Footer */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 20px 0;
+    padding: 10px 0;
     
 }
 
@@ -13,6 +13,8 @@ section .section-title {
 }
 #footer {
     background: #007bff !important;
+    bottom: 0;
+    
 }
 #footer h5{
 	padding-left: 10px;
@@ -82,4 +84,9 @@ h1{
     padding-bottom: 0px;
     margin-bottom: 10px;
 }
+}
+
+img {
+    height: 350px;
+    width: 400px;
 }

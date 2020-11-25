@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <app-carrusel></app-carrusel>
 
-<div *ngIf="productos.length > 0; else noproductos" class="body">
-    <form *ngFor="let p of productos" >
+<div *ngIf="productos.length > 0; else noproductos" class="row justify-content-center w-100">
+    <form *ngFor="let p of productos" class="col-md-2.5">
     <ul >
      <li  class="list-group" *ngIf="user$ | async as user; else loading">
        <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta"> 
@@ -32,7 +32,7 @@
             <!-- <label>Cantidad:</label> -->
             <div class="form-group">
                 <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
-                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
+                <input type="number" name="cantidad"  [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad" min="0" />
             
             <!-- <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" /> -->
             <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
@@ -50,35 +50,9 @@
     </ul>
     </form>
 </div>   
-<br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <app-footer></app-footer>
+
 <ng-template #noproductos>
     <p>No hay productos</p>
 </ng-template>
 
+<app-footer></app-footer>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CafeService</title>
+  <title>CibaoService</title>
   <base href="/">
 
   <link rel="stylesheet" 
@@ -11,8 +11,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    var stripe = Stripe('pk_test_51HrCWKJ241YA5d2XszFYrl9w1waIkI6fEgLFPkkUipHSTYJ95C1cVM2HYhD1R44WWSP915yz8tH8LNiHN8NaMajq00XrwCGp2u');
+    var elements = stripe.elements();
+  </script>
 </body>
 </html>

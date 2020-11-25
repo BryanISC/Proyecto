@@ -1,5 +1,6 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand nombre" href="\">Cibao Service</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="productos.length > 0;">
+    
+    <a class="navbar-brand logo" href="\"><img src="../../../assets/logo.png" class="logo"></a>
     <button type="button" class="menu" (click)="menu = !menu"
             [attr.aria-expanded]="!menu" aria-controls="collapseExample">
             <img src="../../../assets/menu.png" class="icono" alt="drop-images"   />
@@ -40,13 +41,13 @@
             <img src="../../../assets/usuario.png" class="icono" alt="drop-images"   />
     </button> -->
     <button class="carrito" >
-      <a href="enviar-email"><img src="../../../assets/email.png"  class="car" alt="drop-images"   /></a>
+      <a href="enviar-email"><img src="../../../assets/email.png"  class="icono" alt="drop-images"   /></a>
     </button>
     <button class="carrito" >
-      <a href="pedidos"><img src="../../../assets/pedido.ico"  class="car" alt="drop-images"   /></a>
+      <a href="pedidos"><img src="../../../assets/pedido.ico"  class="icono" alt="drop-images"   /></a>
     </button>
     <button class="carrito" >
-      <a href="carrito"><img src="../../../assets/carrito.png"  class="car" alt="drop-images"   /></a>
+      <a href="carrito"><img src="../../../assets/carrito.png"  class="icono" alt="drop-images"   /></a>
     </button>
     <span class="w3-badge w3-green">0</span>
     
@@ -68,7 +69,7 @@
           </li>
           <div ngbDropdown class="d-inline-block" >
             <button class="btn" id="dropdownBasic1" ngbDropdownToggle>
-              <img src="../../../assets/usuario.png" class="usuario" alt="drop-images"   />
+              <img src="../../../assets/usuario.png" class="icono" alt="drop-images"   />
             </button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="sesion" *ngIf="user">
                 <a ngbDropdownItem href="login" class="nav-link" (click)="onLogout()" style="color: black;">Cerrar sesión</a>

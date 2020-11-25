@@ -35,7 +35,10 @@ import { ModalEditarComponent } from './componentes/productos/modal-editar/modal
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { StripePaymentComponent } from "./componentes/stripe-payment/stripe-payment.component";
+import { StripeModule } from "stripe-angular";
 
+import { PaymentRequestComponent } from "./componentes/payment-request/payment-request.component";
 
 
 @NgModule({  
@@ -56,8 +59,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     CarruselComponent,
     CarritoComponent,
     FooterComponent,
-   
-    
+    StripePaymentComponent,
+    PaymentRequestComponent
     
   ],
   imports: [
@@ -74,6 +77,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     AngularFireAuthModule,
     ReactiveFormsModule,
     NgbModule,
+    StripeModule.forRoot('pk_test_51HqUfNG00OUBPhyxc9MO3hJ80muN4UZK3Zzc83P1MnIvW86k8TPVKsAK8ZoOBW7lzx287jGjx0fU5pbaim5YNnz500gadENrFC'),
   ],
   providers: [
     { provide: BUCKET, useValue:'gs://prueba-bf4c8.appspot.com/' },

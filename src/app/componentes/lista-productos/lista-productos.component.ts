@@ -21,7 +21,9 @@ export class ListaProductosComponent implements OnInit {
 
   public user$: Observable<any> = this.authSvc.afAuth.user;
 
-  constructor(public productosService: ProductosService, private authSvc: AutorizacionService) { }
+  constructor(public productosService: ProductosService, private authSvc: AutorizacionService) {
+    
+   }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(productos => {

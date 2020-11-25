@@ -31,42 +31,31 @@
     </li>
     </ul>
     </form>
-
+  
       <h1>Productos</h1><hr class="comida_izquierda"><hr class="comida_derecha">
 
-    <form *ngFor="let p of productos" >
+    <form *ngFor="let prod of productos" >
       <ul >
-       <li class="list-group" *ngIf="p.oferta == false && user$ | async as user;" >
+       <li class="list-group" *ngIf="prod.oferta == false && user$ | async as user;" >
          <div class="shadow bg-white rounded "> 
     
           <div class="zoom">
-             <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+             <img [src]="prod.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, prod)" />
           </div>
     
          <div class="cinta uno">
-          <a >{{p.name}}</a>
+          <a >{{prod.name}}</a>
          </div>
-          <h6>RD$ {{p.precio}}.00</h6>
+          <h6>RD$ {{prod.precio}}.00</h6>
          </div>
-         <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
-          <form (ngSubmit)="producto.name = p.name; 
-          producto.descripcion = p.descripcion; producto.email = user.email; producto.pedido = true; producto.precio = p.precio;
+         <div *ngIf="editando && editandoProductos.id == prod.id" class="cantidad">
+          <form (ngSubmit)="producto.name = prod.name; 
+          producto.descripcion = prod.descripcion; producto.email = user.email; producto.pedido = true; producto.precio = prod.precio;
           agregarPedidos()" class="shado bg-white rounded" >
-              <!-- <label>Cantidad:</label> -->
               <div class="form-group">
-                  <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
                   <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
-              
-              <!-- <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" /> -->
               <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
               </div>
-              <!-- <button (click)="editarProductos($event, p)" class="btn btn-success btn-block" >
-                  Cancelar
-              </button> -->
-              <!-- <button type="submit" [disabled]="producto.cantidad === 0" class="btn btn-success btn-block" >
-                  Seleccionar
-              </button>
-               -->
           </form>
      </div>
       </li>
@@ -74,21 +63,21 @@
       </form>
       
 </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <app-footer></app-footer>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<app-footer></app-footer>
 <!-- <h1>Productos</h1><hr class="comida_izquierda"><hr class="comida_derecha"> -->
 
 <!-- <div *ngIf="productos.length > 0; else noproductos">

@@ -5,10 +5,11 @@ export interface Productos {
     name: string;
     descripcion: string;
     precio: number;
-    cantidad?: number;
+    cantidad: number;
     categoria: string;
     imagenUrl: string;
     oferta: boolean;
     email: string;
     pedido: boolean;
+    roles: string;
 }

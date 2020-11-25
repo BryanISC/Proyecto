@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<h3 class="card-title text-center">Envio de correo a usuarios</h3>
+<!-- <h3 class="card-title text-center">Envio de correo a usuarios</h3>
 <div *ngIf="productos.length > 0;" class="card mt-2" >
     <h5>Usuarios registrados </h5>
   <div *ngFor="let p of productos" class="card-body" >  
@@ -14,4 +14,19 @@
   
   <ng-template #loading>
     Loading....
-  </ng-template>
+  </ng-template> -->
+
+  <div class="card mt-5" *ngIf="productos.length > 0;">
+    <h3 class="card-title text-center">Ingrese el correo del destinatario</h3>
+    <div class="card-body" *ngFor="let p of productos;">
+      <div class="form-group">
+        <input type="email" class="form-control" [(ngModel)]="p.email" [formControl]="userEmail" required/>
+        <a> {{p.email}}</a>
+      </div> 
+      </div>
+      <div class="form-group text-center">
+        <button class="btn btn-primary btn-lg" (click)="onReset()">
+          Enviar
+        </button>
+    </div>
+  </div>

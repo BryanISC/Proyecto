@@ -16,6 +16,7 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   { path: '',   redirectTo: '/', pathMatch: 'full' },
