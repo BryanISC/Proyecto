@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-pedidos',
@@ -13,7 +14,7 @@ export class PedidosComponent implements OnInit {
   editandoProductos: Productos;
   editando: boolean = false;
 
-  constructor(public productosService: ProductosService) { }
+  constructor(public productosService: ProductosService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.productosService.getPedidos().subscribe(productos => {
@@ -26,6 +27,7 @@ export class PedidosComponent implements OnInit {
     this.productosService.actualizarPedidos(this.editandoProductos);
     this.editandoProductos = {} as Productos;
     this.editando = false;
+    this.toastr.success('Producto guardado exitosamente', 'Titulo');
     }
   }
 

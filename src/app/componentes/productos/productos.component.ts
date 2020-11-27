@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-productos',
@@ -14,7 +15,7 @@ export class ProductosComponent implements OnInit {
   editandoProductos: Productos;
   editando: boolean = false;
 
-  constructor(public productosService: ProductosService, public modal: NgbModal,) { }
+  constructor(public productosService: ProductosService, public modal: NgbModal, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(productos => {
@@ -25,6 +26,7 @@ export class ProductosComponent implements OnInit {
   borrarProductos(event, productos) {
     if(confirm('Estas seguro de querer borrarlo?')){
       this.productosService.borrarProductos(productos);
+      this.toastr.error('Producto borrado exitosamente', 'Titulo');
     }
   }
 
@@ -38,6 +40,7 @@ export class ProductosComponent implements OnInit {
     this.productosService.actualizarProductos(this.editandoProductos);
     this.editandoProductos = {} as Productos;
     this.editando = false;
+    this.toastr.info('Producto actualizado exitosamente', 'Titulo');
     }
   }
 

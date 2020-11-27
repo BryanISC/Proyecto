@@ -5,6 +5,7 @@ import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class EnviarEmailComponent implements OnInit {
 
   userEmail = new FormControl('');
 
-  constructor(private authSvc: AutorizacionService, public productosService: ProductosService, private router:Router) { }
+  constructor(private authSvc: AutorizacionService, public productosService: ProductosService, private router:Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.productosService.getEmail().subscribe(productos => {
@@ -29,17 +30,12 @@ export class EnviarEmailComponent implements OnInit {
     });
   }
 
-  // onSendEmail(): void {
-  //   this.authSvc.enviarVerificacionEmail();
-    
-  // }
-
   async onReset() {
     try{
       if(confirm('Estas seguro de la direccion de correo?')){
         const email = this.userEmail.value;
       await this.authSvc.resetPassword(email);
-      alert('Correo enviado correctamente');
+      this.toastr.success('Correo enviado exitosamente', 'Titulo');
       }
       
       

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,16 +30,15 @@ import { RouterModule} from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
 import { EnviarEmailComponent } from './componentes/enviar-email/enviar-email.component';
 import { EnviarEmailDeConfirmacionComponent } from './componentes/enviar-email-de-confirmacion/enviar-email-de-confirmacion.component';
-import { ModalComponent } from './componentes/lista-productos/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalEditarComponent } from './componentes/productos/modal-editar/modal-editar.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { StripePaymentComponent } from "./componentes/stripe-payment/stripe-payment.component";
 import { StripeModule } from "stripe-angular";
-
 import { PaymentRequestComponent } from "./componentes/payment-request/payment-request.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({  
@@ -54,8 +54,6 @@ import { PaymentRequestComponent } from "./componentes/payment-request/payment-r
     HomeComponent,
     EnviarEmailComponent,
     EnviarEmailDeConfirmacionComponent,
-    ModalComponent,
-    ModalEditarComponent,
     CarruselComponent,
     CarritoComponent,
     FooterComponent,
@@ -78,6 +76,8 @@ import { PaymentRequestComponent } from "./componentes/payment-request/payment-r
     ReactiveFormsModule,
     NgbModule,
     StripeModule.forRoot('pk_test_51HqUfNG00OUBPhyxc9MO3hJ80muN4UZK3Zzc83P1MnIvW86k8TPVKsAK8ZoOBW7lzx287jGjx0fU5pbaim5YNnz500gadENrFC'),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({ timeOut: 3000, progressBar: true, progressAnimation: 'increasing'}),
   ],
   providers: [
     { provide: BUCKET, useValue:'gs://prueba-bf4c8.appspot.com/' },

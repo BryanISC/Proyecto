@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~10.0.3",
+    "@angular/animations": "^10.2.3",
     "@angular/cdk": "^11.0.0",
     "@angular/common": "~10.0.3",
     "@angular/compiler": "~10.0.3",
@@ -31,6 +31,7 @@
     "firebase": "^7.19.0",
     "gmail-send": "^1.8.10",
     "googleapis": "^39.2.0",
+    "ngx-toastr": "^13.1.0",
     "rxjs": "~6.5.5",
     "stripe": "^8.125.0",
     "stripe-angular": "^1.4.0",

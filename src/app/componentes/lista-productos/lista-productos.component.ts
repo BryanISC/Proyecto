@@ -3,7 +3,7 @@ import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
 import { AutorizacionService } from 'src/app/servicios/login/autorizacion.service'
 import { Observable } from 'rxjs';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-productos',
@@ -21,7 +21,7 @@ export class ListaProductosComponent implements OnInit {
 
   public user$: Observable<any> = this.authSvc.afAuth.user;
 
-  constructor(public productosService: ProductosService, private authSvc: AutorizacionService) {
+  constructor(public productosService: ProductosService, private authSvc: AutorizacionService, private toastr: ToastrService) {
     
    }
 
@@ -35,9 +35,8 @@ export class ListaProductosComponent implements OnInit {
     if(confirm('Estas seguro de su selección?')){
       this.productosService.agregarPedidos(this.producto);
       console.log(this.producto);
+      this.toastr.success('Producto agregado al carrito', 'Titulo');
     }
-    alert('Producto agregado al carrito');
-    
   }
 
   actualizarPedidos() {

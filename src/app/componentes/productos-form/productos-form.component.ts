@@ -3,7 +3,9 @@ import { FileItem } from "../../models/file-item";
 
 import { ProductosService } from '../../servicios/productos.service';
 import { Productos } from 'src/app/models/productos';
+import { ToastrService } from 'ngx-toastr';
 import { ConstantPool } from '@angular/compiler';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class ProductosFormComponent implements OnInit {
 
   producto = {} as Productos;
 
-  constructor(public productosService: ProductosService) { 
+  constructor(public productosService: ProductosService, private toastr: ToastrService) { 
     this.imgURL = ""
   }
 
@@ -37,7 +39,7 @@ export class ProductosFormComponent implements OnInit {
     }
     this.producto = {} as Productos;
     this.imgURL = "";
-    alert('Producto guardado exitosamente')
+    this.toastr.success('Producto guardado exitosamente', 'Titulo');
 
   }
   
