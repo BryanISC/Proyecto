@@ -1,6 +1,6 @@
     .card {
-        width: 55%;
-        left: 23%;
+        width: 78%;
+        left: 12%;
     }
 
     .icono {
@@ -106,7 +106,7 @@
     } */
 
     .imagen {
-        width: 200px;
+        width: 220px;
         height: 200px;
         box-shadow: 0 0 8px 8px white inset;
         
@@ -184,7 +184,7 @@
             color: rgb(248, 246, 246);
             background: transparent; 
             height:0;
-            width:200px;                      
+            width:220px;                      
             border: 25px solid transparent;
             border-bottom:25px solid rgb(0, 0, 0);
             line-height:23px;

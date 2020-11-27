@@ -1,9 +1,9 @@
-<form (ngSubmit)="createStripeToken()" class="checkout">
+<form (ngSubmit)="createStripeToken()" class="checkout" style="left: 250px;">
     <label for="card-info">Card Info</label>
 <div id="form-field">
         <div id="card-info" #cardInfo></div>
         <button id="submit-button" type="submit">
-            Pay ${{_totalAmount}}
+            Realizar pedido ${{_totalAmount}}
         </button>
         <mat-error id="card-errors" role="alert" *ngIf="cardError">
             <mat-icon style="color: #f44336">cancel</mat-icon>

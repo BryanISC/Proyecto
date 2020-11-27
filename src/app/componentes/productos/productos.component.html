@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 
 <h5 class="p-2">Productos</h5>
-<div *ngIf="productos.length > 0; else noproductos" class="body" >
-  <li *ngFor="let p of productos" class="list-group " >
+<div *ngIf="productos.length > 0; else noproductos" class="row justify-content-center w-100" >
+  <li *ngFor="let p of productos" class="list-group col-md-1.5" >
     <div class="shadow p-3 mb-3 bg-white rounded">
     <div class="card-body mb-1 "  >
         <img [src]="p.imagenUrl" alt="drop-images" class="imagenProducto"/>
@@ -81,4 +81,4 @@
     <p>No hay productos</p>
 </ng-template>
 
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

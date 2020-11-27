@@ -1,7 +1,9 @@
 <app-navbar></app-navbar>
+
+<br>
 <h1>Pedidos</h1>
-<div *ngIf="productos.length > 0; else noproductos" class="body">
-    <form *ngFor="let p of productos" class="contenedor">
+<div *ngIf="productos.length > 0; else noproductos" class="row justify-content-center w-100">
+    <form *ngFor="let p of productos" class="contenedor col-md-2.5">
      <li class="list-group carta" *ngIf="p.pedido == true">
        <div [ngClass]="{pedido: p.pedido}" class="shadow bg-white rounded pedido" (click)="editarProductos($event, p)"> 
         <div class="email">
@@ -26,4 +28,4 @@
     <p>No hay productos</p>
 </ng-template>
 
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

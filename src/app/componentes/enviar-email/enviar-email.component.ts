@@ -36,10 +36,13 @@ export class EnviarEmailComponent implements OnInit {
 
   async onReset() {
     try{
-      const email = this.userEmail.value;
+      if(confirm('Estas seguro de la direccion de correo?')){
+        const email = this.userEmail.value;
       await this.authSvc.resetPassword(email);
-      window.alert('Estas seguro de la direccion de correo?');
       alert('Correo enviado correctamente');
+      }
+      
+      
       // this.router.navigate(['/enviar-email'])
     }
     catch(error){console.log(error)}

@@ -21,6 +21,7 @@
          <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
         </div>
          <h6>RD$ {{p.precio}}.00</h6>
+         <h6>Descripción: {{p.descripcion}}</h6>
          <h6>Cantidad: {{p.cantidad}}ud</h6>
          <h6>Total: RD${{p.precio * p.cantidad}}.00</h6>
         <!-- <h6 class="datos">Precio: {{p.precio * p.cantidad}}</h6> -->
@@ -47,9 +48,9 @@
 <h6 class="datos">Monto total: RD${{producto.precio * producto.cantidad}}.00</h6>
     
         
-    <button type="submit" class="btn mt-4 btn-dark btn-block col-md-12">
+    <!-- <button type="submit" class="btn mt-4 btn-dark btn-block col-md-12">
         Realizar pedido
-    </button>
+    </button> -->
 
    <app-stripe-payment></app-stripe-payment>
   

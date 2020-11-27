@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <app-carrusel></app-carrusel>
 
+<br>
 <div *ngIf="productos.length > 0; else noproductos" class="row justify-content-center w-100">
     <form *ngFor="let p of productos" class="col-md-2.5">
     <ul >
