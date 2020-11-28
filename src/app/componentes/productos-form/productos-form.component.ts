@@ -39,7 +39,7 @@ export class ProductosFormComponent implements OnInit {
     }
     this.producto = {} as Productos;
     this.imgURL = "";
-    this.toastr.success('Producto guardado exitosamente', 'Titulo');
+    this.toastr.success('Producto guardado exitosamente', 'Alerta');
 
   }
   

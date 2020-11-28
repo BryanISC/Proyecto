@@ -24,9 +24,9 @@ export class ProductosComponent implements OnInit {
   }
 
   borrarProductos(event, productos) {
-    if(confirm('Estas seguro de querer borrarlo?')){
+    if(confirm('¿Estas seguro de querer borrarlo?')){
       this.productosService.borrarProductos(productos);
-      this.toastr.error('Producto borrado exitosamente', 'Titulo');
+      this.toastr.error('Producto borrado exitosamente', 'Alerta');
     }
   }
 
@@ -36,11 +36,11 @@ export class ProductosComponent implements OnInit {
   }
 
   actualizarProductos() {
-    if(confirm('Estas seguro de querer actualizarlo?')){
+    if(confirm('¿Estas seguro de querer actualizarlo?')){
     this.productosService.actualizarProductos(this.editandoProductos);
     this.editandoProductos = {} as Productos;
     this.editando = false;
-    this.toastr.info('Producto actualizado exitosamente', 'Titulo');
+    this.toastr.info('Producto actualizado exitosamente', 'Alerta');
     }
   }
 

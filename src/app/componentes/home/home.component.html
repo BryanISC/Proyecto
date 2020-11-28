@@ -11,7 +11,9 @@
        <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta" > 
 
         <div class="zoom">
-           <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+          <abbr title="Descripción: {{p.descripcion}}">
+            <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+         </abbr>
         </div>
 
        <div class="cinta uno">
@@ -23,7 +25,7 @@
         <form (ngSubmit)="producto.name = p.name; producto.descripcion = p.descripcion; producto.email = user.email; 
         producto.pedido = true; producto.precio = p.precio; producto.imageUrl = p.imagenUrl; agregarPedidos()" class="shadow mb-5 bg-white rounded" >
             <div class="form-group"> 
-              <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
+              <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="Cantidad del producto" />
           <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
           </div>
         </form>
@@ -55,7 +57,7 @@
           producto.descripcion = prod.descripcion; producto.email = user.email; producto.pedido = true; producto.precio = prod.precio;
           producto.imageUrl = prod.imagenUrl; agregarPedidos()" class="shado bg-white rounded" >
               <div class="form-group">
-                  <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
+                  <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="Cantidad del producto" />
               <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
               </div>
           </form>
@@ -66,36 +68,6 @@
     </div>
     <h4><a class="mas"  href="lista-productos">Ver más</a></h4>
 <app-footer></app-footer>
-<!-- <h1>Productos</h1><hr class="comida_izquierda"><hr class="comida_derecha"> -->
-
-<!-- <div *ngIf="productos.length > 0; else noproductos">
-  <form *ngFor="let p of productos" >
-  <ul >
-   <li class="list-group" *ngIf="p.oferta == false && user$ | async as user;" >
-     <div class="shadow bg-white rounded "> 
-
-      <div class="zoom">
-         <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
-      </div>
-
-     <div class="cinta uno">
-      <a >{{p.name}}</a>
-     </div>
-      <h6>RD$ {{p.precio}}.00</h6>
-     </div>
-     <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
-      <form (ngSubmit)="producto.name = p.name; producto.descripcion = p.descripcion; producto.email = user.email; 
-      producto.pedido = true; producto.precio = p.precio; agregarPedidos()" class="shadow  mb-5 bg-white rounded" >
-      <div class="form-group">
-        <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
-    <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
-    </div>
-      </form>
- </div>
-  </li>
-  </ul>
-  </form>
-</div> -->
     
 <ng-template #noproductos>
     <p>No hay productos</p>

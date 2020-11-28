@@ -18,7 +18,7 @@ export class EnviarEmailDeConfirmacionComponent implements OnInit {
 
   onSendEmail(): void {
     this.authSvc.enviarVerificacionEmail();
-    this.toastr.success('Producto guardado exitosamente', 'Titulo');
+    this.toastr.success('Correo enviado exitosamente', 'Alerta');
   }
 
 }

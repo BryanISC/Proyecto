@@ -31,16 +31,16 @@ export class HomeComponent implements OnInit {
   }
 
   agregarPedidos(){
-    if(confirm('Estas seguro de su selección?')){
+    if(confirm('¿Estas seguro de su selección?')){
       this.productosService.agregarPedidos(this.producto);
       console.log(this.producto);
-      this.toastr.success('Producto agregado al carrito', 'Titulo');
+      this.toastr.success('Producto agregado al carrito', 'Alerta');
     }
     
   }
 
   actualizarPedidos() {
-    if(confirm('Estas seguro de querer actualizarlo?')){
+    if(confirm('¿Estas seguro de querer actualizarlo?')){
     this.productosService.actualizarPedidos(this.editandoProductos);
     this.editandoProductos = {} as Productos;
     this.editando = false;

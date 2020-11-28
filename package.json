@@ -31,6 +31,7 @@
     "firebase": "^7.19.0",
     "gmail-send": "^1.8.10",
     "googleapis": "^39.2.0",
+    "ngx-paypal": "^6.2.0",
     "ngx-toastr": "^13.1.0",
     "rxjs": "~6.5.5",
     "stripe": "^8.125.0",

@@ -23,11 +23,11 @@ export class PedidosComponent implements OnInit {
   }
 
   actualizarPedidos() {
-    if(confirm('Estas seguro?')){
+    if(confirm('¿Estas seguro?')){
     this.productosService.actualizarPedidos(this.editandoProductos);
     this.editandoProductos = {} as Productos;
     this.editando = false;
-    this.toastr.success('Producto guardado exitosamente', 'Titulo');
+    this.toastr.success('Producto guardado exitosamente', 'Alerta');
     }
   }
 

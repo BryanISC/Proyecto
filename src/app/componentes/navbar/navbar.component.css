@@ -1,6 +1,11 @@
 .icono {
     height: 30px;
     width: 30px;
+    
+}
+
+ul {
+    position: relative; left: 180px;
 }
 
 .navbar-brand {
@@ -30,10 +35,12 @@
 }
 
 .sesion {
-    
     background: #007BFF;
     border: transparent;
     text-align: center;
+    position: relative;
+    padding-block: 1px;
+    margin-block: 1px;
 }
 
 .carrito {

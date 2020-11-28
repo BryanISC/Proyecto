@@ -30,8 +30,9 @@ h1 {
     height: 5px;
     text-align: left;
     width: 610px;
-    position: absolute;
-    top: 712px;
+    position: relative;
+    top: 58px;
+    right: 455px;
 }
 
 .comida_derecha {

@@ -33,7 +33,7 @@
         <form (ngSubmit)="producto.name = p.name; agregarPedidos()" class="shadow p-3 mb-5 bg-white rounded" >
             <label>Cantidad:</label>
             <div class="form-group">
-                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad del producto" />
+                <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="Cantidad del producto" />
             </div>
             <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" />
             <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
@@ -52,7 +52,9 @@
         Realizar pedido
     </button> -->
 
-   <app-stripe-payment></app-stripe-payment>
+   <!-- <app-stripe-payment></app-stripe-payment> -->
+
+   <ngx-paypal [config]="payPalConfig"></ngx-paypal>
   
 </div>
 

@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-
 import { AlmacenamientoService } from '../../servicios/subir-imagen/almacenamiento.service';
 import { FileItem } from 'src/app/models/file-item';
 import { stringify } from '@angular/compiler/src/util';

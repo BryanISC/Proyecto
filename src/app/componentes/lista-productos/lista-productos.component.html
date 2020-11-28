@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
 <app-carrusel></app-carrusel>
 
+
+<h1>Productos</h1><hr class="linea_izquierda"><hr class="linea_derecha">
 <br>
 <div *ngIf="productos.length > 0; else noproductos" class="row justify-content-center w-100">
     <form *ngFor="let p of productos" class="col-md-2.5">
@@ -9,7 +11,10 @@
        <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta"> 
        <!-- <div class="card"  > -->
         <div class="zoom">
-           <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+           
+           <abbr title="Descripción: {{p.descripcion}}">
+               <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
+            </abbr>
         </div>
        <!-- <h6>{{p.descripcion}}</h6>  -->
        <div class="cinta uno">
@@ -17,6 +22,7 @@
         <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
         <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
        </div>
+       
         <h6>RD$ {{p.precio}}.00</h6>
         <!-- <button class="btn btn-dark btn-block col-md-12">
             seleccionar

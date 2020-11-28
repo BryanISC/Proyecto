@@ -33,10 +33,4 @@ export class RegistroComponent {
       console.log(error);
     }
   }
-
-  // agregarEmail(){
-  //     this.productosService.agregarEmail(this.producto);
-  //     console.log(this.producto);
-    
-  // }
 }

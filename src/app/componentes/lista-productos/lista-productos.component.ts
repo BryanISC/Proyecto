@@ -32,10 +32,10 @@ export class ListaProductosComponent implements OnInit {
   }
 
   agregarPedidos(){
-    if(confirm('Estas seguro de su selección?')){
+    if(confirm('¿Estas seguro de su selección?')){
       this.productosService.agregarPedidos(this.producto);
       console.log(this.producto);
-      this.toastr.success('Producto agregado al carrito', 'Titulo');
+      this.toastr.success('Producto agregado al carrito', 'Alerta');
     }
   }
 

@@ -35,7 +35,7 @@ export class EnviarEmailComponent implements OnInit {
       if(confirm('Estas seguro de la direccion de correo?')){
         const email = this.userEmail.value;
       await this.authSvc.resetPassword(email);
-      this.toastr.success('Correo enviado exitosamente', 'Titulo');
+      this.toastr.success('Correo enviado exitosamente', 'Alerta');
       }
       
       
