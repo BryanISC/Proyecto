@@ -14,7 +14,6 @@ import { AngularFireStorageModule, BUCKET } from "@angular/fire/storage";
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ProductosFormComponent } from './componentes/productos-form/productos-form.component';
-import { from } from 'rxjs';
 
 import { CommonModule } from '@angular/common';
 
@@ -34,9 +33,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-import { StripePaymentComponent } from "./componentes/stripe-payment/stripe-payment.component";
-import { StripeModule } from "stripe-angular";
-import { PaymentRequestComponent } from "./componentes/payment-request/payment-request.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPayPalModule } from 'ngx-paypal';
 
@@ -58,8 +54,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     CarruselComponent,
     CarritoComponent,
     FooterComponent,
-    StripePaymentComponent,
-    PaymentRequestComponent
+   
     
   ],
   imports: [
@@ -76,7 +71,6 @@ import { NgxPayPalModule } from 'ngx-paypal';
     AngularFireAuthModule,
     ReactiveFormsModule,
     NgbModule,
-    StripeModule.forRoot('pk_test_51HqUfNG00OUBPhyxc9MO3hJ80muN4UZK3Zzc83P1MnIvW86k8TPVKsAK8ZoOBW7lzx287jGjx0fU5pbaim5YNnz500gadENrFC'),
     BrowserAnimationsModule,
     ToastrModule.forRoot({ timeOut: 3000, progressBar: true, progressAnimation: 'increasing'}),
     NgxPayPalModule,
