@@ -17,17 +17,39 @@ export class HomeComponent implements OnInit {
   productos = [];
   editandoProductos: Productos;
   editando: boolean = false;
+  // emailLogged: any;
+  // emailRol: any;
+  // isAdmin: boolean;
 
   producto = {} as Productos;
 
   public user$: Observable<any> = this.authSvc.afAuth.user;
 
-  constructor(public productosService: ProductosService, private authSvc: AutorizacionService, private toastr: ToastrService) { }
+  constructor(public productosService: ProductosService, private authSvc: AutorizacionService, private toastr: ToastrService) {
+
+    // this.user$.subscribe(user => {
+    //   this.emailLogged = user.email;
+    //   // console.log(this.emailLogged);
+    // });
+
+    // this.productosService.getEmail().subscribe(prod => {
+    //   this.emailRol = prod.find(p => p.email == this.emailLogged);
+
+    //   console.log(this.emailRol.roles);
+    // });
+
+    // if (this.emailRol.roles == "admin") {
+    //   this.isAdmin = true;
+    // }
+
+   }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(productos => {
       this.productos = productos;
     });
+
+    
   }
 
   agregarPedidos(){

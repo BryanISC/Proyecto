@@ -34,7 +34,6 @@
         <button (click)="editarProductos($event, p)" class="lapiz">
             <img src="../../../assets/editar.png" class="icono" alt="drop-images" />
         </button>
-        <app-modal-editar></app-modal-editar>
     </div>
 
        <div *ngIf="editando && editandoProductos.id == p.id">

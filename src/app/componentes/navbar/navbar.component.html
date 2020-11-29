@@ -1,10 +1,13 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="productos.length > 0;">
     
     <a class="navbar-brand logo" href="\"><img src="../../../assets/logo.png" class="logo"></a>
-    <button type="button" class="menu" (click)="menu = !menu"
-            [attr.aria-expanded]="!menu" aria-controls="collapseExample">
+    <div *ngIf= "isAdmin;">
+      <button type="button" class="menu" (click)="menu = !menu"
+            [attr.aria-expanded]="!menu" aria-controls="collapseExample" >
             <img src="../../../assets/menu.png" class="icono" alt="drop-images"   />
     </button>
+    </div>
+    
     
   <div id="collapseExample" [ngbCollapse]="menu">    
     
@@ -12,16 +15,10 @@
     <a class="navbar-brand" href="productos">Productos</a>
     <a class="navbar-brand" href="productos-form">Registro de productos</a>
   </div>
-    <!-- <a class="navbar-brand" href="\">Home</a>
+  
+  <div *ngIf= "!isAdmin;">
     <a class="navbar-brand" href="lista-productos">Lista de productos</a>
-    <a class="navbar-brand" href="productos">Productos</a>
-    <a class="navbar-brand" href="productos-form">Registro de productos</a> -->
-    <!-- <a class="navbar-brand" href="pedidos">Pedidos</a> -->
-    
-    <!-- <a class="navbar-brand" href="recuperar-password">Recuperar contraseña</a> -->
-    <!-- <a class="navbar-brand" href="verificacion-email">Email</a> -->
-    <!-- <a class="navbar-brand" href="modal">Modal</a> -->
-    <!-- <a class="navbar-brand" href="carrusel">carrusel</a> -->
+  </div>
     <button
       class="navbar-toggler"
       type="button"
@@ -33,13 +30,14 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <button class="carrito" >
-      <a href="enviar-email"><img src="../../../assets/email.png"  class="icono" alt="drop-images"   /></a>
-    </button>
-    <button class="carrito" >
-      <a href="pedidos"><img src="../../../assets/pedido.ico"  class="icono" alt="drop-images"   /></a>
-    </button>
+    <div *ngIf= "isAdmin;">
+      <button class="carrito" >
+        <a href="enviar-email"><img src="../../../assets/email.png"  class="icono" alt="drop-images"   /></a>
+      </button>
+      <button class="carrito" >
+        <a href="pedidos"><img src="../../../assets/pedido.ico"  class="icono" alt="drop-images"   /></a>
+      </button>
+    </div>  
     <button class="carrito" >
       <a href="carrito"><img src="../../../assets/carrito.png"  class="icono" alt="drop-images"   /></a>
     </button>

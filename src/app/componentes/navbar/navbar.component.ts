@@ -24,7 +24,30 @@ export class NavbarComponent{
 
   public user$: Observable<any> = this.authSvc.afAuth.user;
 
-  constructor(public authSvc: AutorizacionService, private router: Router, public productosService: ProductosService) {}
+  isAdmin: boolean;
+  emailLogged: any;
+  emailRol: any;
+  user: any;
+
+  constructor(public authSvc: AutorizacionService, private router: Router, public productosService: ProductosService) {
+    this.user$.subscribe(user => {
+      this.emailLogged = user.email;
+      // console.log(this.emailLogged);
+    });
+
+    this.productosService.getEmail().subscribe(prod => {
+      this.emailRol = prod.find(p => p.email == this.emailLogged);
+
+      console.log(this.emailRol.roles);
+
+      sessionStorage.setItem("user", this.emailRol);
+      this.user = sessionStorage.getItem('user');
+      
+      if (this.emailRol.roles == "admin") {
+        this.isAdmin = true;
+      }
+    });    
+  }
 
   async onLogout() {
     try {
