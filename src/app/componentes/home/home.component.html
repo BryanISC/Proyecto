@@ -26,7 +26,7 @@
         producto.pedido = true; producto.precio = p.precio; producto.imageUrl = p.imagenUrl; agregarPedidos()" class="shadow mb-5 bg-white rounded" >
             <div class="form-group"> 
               <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" class="form-control" placeholder="Cantidad del producto" />
-          <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
+          <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/carrito.png" class="icono" alt="drop-images"   /></button>
           </div>
         </form>
    </div>

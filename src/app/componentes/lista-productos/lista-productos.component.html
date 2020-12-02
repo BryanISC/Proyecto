@@ -9,48 +9,29 @@
     <ul >
      <li  class="list-group" *ngIf="user$ | async as user; else loading">
        <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta"> 
-       <!-- <div class="card"  > -->
         <div class="zoom">
            
            <abbr title="Descripción: {{p.descripcion}}">
                <img [src]="p.imagenUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
             </abbr>
         </div>
-       <!-- <h6>{{p.descripcion}}</h6>  -->
        <div class="cinta uno">
         <a >{{p.name}}</a>
-        <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
-        <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
        </div>
-       
-        <h6>RD$ {{p.precio}}.00</h6>
-        <!-- <button class="btn btn-dark btn-block col-md-12">
-            seleccionar
-        </button> -->
-        <!-- <app-modal></app-modal> -->
-        <!-- <button (click)="editarProductos($event, p)" class="btn btn-primary">
-            seleccionar
-        </button> -->
+        <h6>RD$ {{p.precio}}.00</h6> 
        </div>
        <div *ngIf="editando && editandoProductos.id == p.id" class="cantidad">
         <form (ngSubmit)="producto.name = p.name; 
         producto.descripcion = p.descripcion; producto.email = user.email; producto.pedido = true; producto.precio = p.precio;
         producto.imageUrl = p.imagenUrl; agregarPedidos()" class="shado bg-white rounded" >
-            <!-- <label>Cantidad:</label> -->
+
             <div class="form-group">
-                <!-- <input type="number" name="cantidad" [(ngModel)]="editandoProductos.cantidad" class="form-control"/>  -->
+
                 <input type="number" name="cantidad"  [(ngModel)]="producto.cantidad" class="form-control" placeholder="cantidad" min="0" />
-            
-            <!-- <img src="../../../assets/cancelar.png" class="icono" alt="drop-images" (click)="editarProductos()" /> -->
+
             <button type="submit" [disabled]="producto.cantidad <= 0"><img src="../../../assets/comprobar.png" class="icono" alt="drop-images"   /></button>
             </div>
-            <!-- <button (click)="editarProductos($event, p)" class="btn btn-success btn-block" >
-                Cancelar
-            </button> -->
-            <!-- <button type="submit" [disabled]="producto.cantidad === 0" class="btn btn-success btn-block" >
-                Seleccionar
-            </button>
-             -->
+    
         </form>
    </div>
     </li>

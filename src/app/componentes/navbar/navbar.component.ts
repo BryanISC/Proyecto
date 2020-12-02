@@ -32,20 +32,21 @@ export class NavbarComponent{
   constructor(public authSvc: AutorizacionService, private router: Router, public productosService: ProductosService) {
     this.user$.subscribe(user => {
       this.emailLogged = user.email;
-      // console.log(this.emailLogged);
+      console.log(this.emailLogged);
     });
 
     this.productosService.getEmail().subscribe(prod => {
       this.emailRol = prod.find(p => p.email == this.emailLogged);
 
-      console.log(this.emailRol.roles);
+      // console.log(this.emailRol.roles);
 
       sessionStorage.setItem("user", this.emailRol);
       this.user = sessionStorage.getItem('user');
       
-      if (this.emailRol.roles == "admin") {
+      if (this.emailRol.email == "bryanfajardo512@gmail.com") {
         this.isAdmin = true;
-      }
+        console.log(this.isAdmin);
+      } 
     });    
   }
 

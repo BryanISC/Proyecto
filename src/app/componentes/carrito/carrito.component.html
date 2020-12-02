@@ -45,16 +45,11 @@
 </div>
 
 
-<h6 class="datos">Monto total: RD${{producto.precio * producto.cantidad}}.00</h6>
-    
-        
-    <!-- <button type="submit" class="btn mt-4 btn-dark btn-block col-md-12">
-        Realizar pedido
-    </button> -->
-
-   <!-- <app-stripe-payment></app-stripe-payment> -->
-
-   <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+<h6 class="datos">Monto total: RD${{total}}.00</h6>
+<div class="row justify-content-center ">
+    <ngx-paypal [config]="payPalConfig" class="col-md-8"></ngx-paypal>
+</div>
+   
   
 </div>
 

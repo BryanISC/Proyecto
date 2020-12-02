@@ -4,7 +4,6 @@ import { Productos } from 'src/app/models/productos';
 import { AutorizacionService } from 'src/app/servicios/login/autorizacion.service'
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-// import { IPayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
 @Component({
@@ -25,13 +24,34 @@ export class CarritoComponent implements OnInit {
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean;
   
-  constructor(public productosService: ProductosService, private authSvc: AutorizacionService, private toastr: ToastrService) { }
+  total: number;
+
+  constructor(public productosService: ProductosService, private authSvc: AutorizacionService, private toastr: ToastrService) {
+    this.total = 0;
+  }
 
   ngOnInit() {
     this.productosService.getPedidos().subscribe(productos => {
       this.productos = productos;
+
+      productos.forEach(producto => {
+        if (producto.email=="raudyfarjardo.2@gmail.com") {
+          this.montoTotal(producto.cantidad,producto.precio);
+        }
+        
+      });
+
+      console.log(this.total);
     });
     this.initConfig();
+
+  }
+
+  montoTotal(cantidad:number, precio:number ):number{
+    
+    this.total += cantidad * precio;
+
+    return this.total;
   }
 
   borrarPedidos(event, productos) {

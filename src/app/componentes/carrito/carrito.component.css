@@ -111,22 +111,6 @@
         box-shadow: 0 0 8px 8px white inset;
         
         }
-    
-        .icono {
-            width: 80px;
-            height: 35px;
-            /* text-align: center; */
-            border-radius: 20%;
-            
-        }
-        
-        li{  
-            float: left;
-            padding: 20px;
-            font: italic bold 15px Georgia, Serif;
-            /* background-color: #00d2ff; */
-            /* border: solid; */
-        }
         
         .form-control {
             height: 40px;
