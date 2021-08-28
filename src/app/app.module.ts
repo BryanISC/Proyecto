@@ -35,7 +35,7 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPayPalModule } from 'ngx-paypal';
-
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 
 @NgModule({  
@@ -54,8 +54,6 @@ import { NgxPayPalModule } from 'ngx-paypal';
     CarruselComponent,
     CarritoComponent,
     FooterComponent,
-   
-    
   ],
   imports: [
     BrowserModule,
@@ -72,6 +70,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule,
+    RadioButtonModule,
     ToastrModule.forRoot({ timeOut: 3000, progressBar: true, progressAnimation: 'increasing'}),
     NgxPayPalModule,
   ],

@@ -1,7 +1,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="productos.length > 0;">
     
     <a class="navbar-brand logo" href="\"><img src="../../../assets/logo.png" class="logo"></a>
-    <div *ngIf="isAdmin">
+    <div >
       <button type="button" class="menu" (click)="menu = !menu"
             [attr.aria-expanded]="!menu" aria-controls="collapseExample" >
             <img src="../../../assets/menu.png" class="icono" alt="drop-images"   />
@@ -16,9 +16,9 @@
     <a class="navbar-brand" href="productos-form">Registro de productos</a>
   </div>
   
-  <div *ngIf="isAdmin == false;">
+  <!-- <div>
     <a class="navbar-brand" href="lista-productos">Lista de productos</a>
-  </div>
+  </div> -->
     <button
       class="navbar-toggler"
       type="button"
@@ -30,7 +30,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div *ngIf= "isAdmin">
+    <div>
       <button class="carrito" >
         <a href="enviar-email"><img src="../../../assets/email.png"  class="icono" alt="drop-images"   /></a>
       </button>

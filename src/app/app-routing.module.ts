@@ -17,12 +17,12 @@ import { FooterComponent } from './componentes/footer/footer.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  { path: '',   redirectTo: '/', pathMatch: 'full' },
+  {path: '',   redirectTo: '/', pathMatch: 'full' },
   {path: 'subir-imagen', component: SubirImagenComponent},
   {path: 'productos', component: ProductosComponent},
   {path: 'productos-form', component: ProductosFormComponent},
-  { path: 'login', loadChildren: () => import('./componentes/login/login.module').then(m => m.LoginModule) },
-  { path: 'registro', loadChildren: () => import('./componentes/registro/registro.module').then(m => m.RegistroModule) },
+  {path: 'login', loadChildren: () => import('./componentes/login/login.module').then(m => m.LoginModule) },
+  {path: 'registro', loadChildren: () => import('./componentes/registro/registro.module').then(m => m.RegistroModule) },
   {path: 'navbar', component: NavbarComponent},
   {path: 'verificacion-email', component: EnviarEmailDeConfirmacionComponent},
   {path: 'enviar-email', component: EnviarEmailComponent},

@@ -35,7 +35,7 @@ export class CarritoComponent implements OnInit {
       this.productos = productos;
 
       productos.forEach(producto => {
-        if (producto.email=="raudyfarjardo.2@gmail.com") {
+        if (producto.email=="bryanfajardo512@gmail.com") {
           this.montoTotal(producto.cantidad,producto.precio);
         }
         

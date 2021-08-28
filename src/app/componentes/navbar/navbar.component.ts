@@ -38,8 +38,6 @@ export class NavbarComponent{
     this.productosService.getEmail().subscribe(prod => {
       this.emailRol = prod.find(p => p.email == this.emailLogged);
 
-      // console.log(this.emailRol.roles);
-
       sessionStorage.setItem("user", this.emailRol);
       this.user = sessionStorage.getItem('user');
       

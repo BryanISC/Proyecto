@@ -1,30 +1,25 @@
 <app-navbar></app-navbar>
 
 <br><h1>Carrito de compra</h1>
-<!-- <frameset></frameset> -->
+
 <div class="card card-body">
 <div *ngIf="productos.length > 0; else noproductos" >
 <div *ngFor="let p of productos" class="body">
     <form *ngIf="user$ | async as user;" class="contenedor">
      <li *ngIf="p.email == user?.email && p.pedido == true " class="list-group carta" >
        <div [ngClass]="{oferta: p.oferta}" class="shadow bg-white rounded oferta"> 
-        <!-- <div class="email">
-            <h6 class="correo">{{p.email}}</h6>
-        </div>    -->
+
         <div class="zoom">
             <img [src]="p.imageUrl" class="imagen" alt="drop-images" (click)="editarProductos($event, p)" />
          </div>
-        <!-- <h6>{{p.descripcion}}</h6>  -->
+
         <div class="cinta uno">
          <a >{{p.name}}</a>
-         <!-- <input type="text" name="name" [(ngModel)]="producto.name" > <a>{{p.name}}</a> -->
-         <!-- <input type="text" name="name" [(ngModel)]="producto.name" >  -->
         </div>
          <h6>RD$ {{p.precio}}.00</h6>
          <h6>Descripción: {{p.descripcion}}</h6>
          <h6>Cantidad: {{p.cantidad}}ud</h6>
          <h6>Total: RD${{p.precio * p.cantidad}}.00</h6>
-        <!-- <h6 class="datos">Precio: {{p.precio * p.cantidad}}</h6> -->
         <button (click)="borrarPedidos($event, p)" class="btn btn-primary boton">
             Eliminar
         </button>
